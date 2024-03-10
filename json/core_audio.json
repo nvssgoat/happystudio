@@ -1,0 +1,9 @@
+{
+    "autoLoadVO": {
+        "swf_files": [
+			"audio/audio_common.swf",
+			"audio/audio_pets.swf",
+			"audio/user/profile/audio_profile.swf"
+        ]
+    }
+}

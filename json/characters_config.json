@@ -1,0 +1,34 @@
+[
+	{
+		"default":true,
+		"characterRight":"characters/character10.swf"
+	},
+	{
+		"views":"CustomizeAvatarView,StoreView",
+		"characterRight":"characters/character12.swf"
+	},
+	{
+		"views":"CustomizeGatesView",
+		"characterRight":"characters/character2.swf"
+	},
+	{
+		"views":"CreationsView",
+		"characterRight":"characters/character6.swf"
+	},
+	{
+		"views":"AchievementsView",
+		"characterRight":"characters/character4.swf"
+	},
+	{
+		"views":"MissionsView",
+		"characterRight":"characters/character8.swf"
+	},
+	{
+		"views":"ToyCollectionView",
+		"characterRight":"characters/character1.swf"
+	},
+	{
+		"views":"NotificationModal",
+		"characterRight":"characters/character_notification.swf"
+	}
+]

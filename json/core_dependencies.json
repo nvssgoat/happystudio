@@ -1,0 +1,37 @@
+{
+    "autoLoadVO": {
+        "swf_files": [
+        	"backgrounds/user/login/background_login.swf",
+        	"common/common_worldui.swf",
+        	"common/common_cursors.swf",
+			"views/view_zoneloader.swf",
+			"views/view_splash.swf",
+			"views/error/view_fatalerror.swf",
+			"views/shell/shell_core.swf",
+			"views/shell/shell_navsite.swf",
+			"views/shell/shell_navsite_old.swf",
+			"views/shell/shell_navuser.swf",
+			"views/shell/shell_bottomNav.swf",
+			"views/shell/shell_bottomNavAlt.swf",
+			"avatar/avatar_rig.swf",
+			"avatar/avatar_rig_large.swf",
+			"audio/audio_common.swf",
+			"audio/user/profile/audio_profile.swf",
+			"loading/loading_spinner.swf",
+			"loading/loading_balloon.swf",
+			"views/tooltip/view_tooltip.swf",
+			"characters/character10.swf",
+			"views/view_characters.swf",
+			"modals/user/modal_missiontracking.swf",
+			"modals/user/modal_missiontracking_percents.swf",
+			"modals/modal_tooltip.swf",
+			"modals/tooltips/modal_tooltip_unlock.swf",
+			"modals/tooltips/game_tooltip.swf",
+			"modals/modal_tooltip_nav.swf"
+        ],
+		"json_files": [
+			{"key":"zoneConfig", "value":"zone_config.json"},
+			{"key":"charactersConfig", "value":"characters_config.json"}
+		]
+    }
+}

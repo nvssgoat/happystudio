@@ -1,0 +1,16 @@
+{
+    "autoLoadVO": {
+        "swf_files": [
+			"views/shell/shell_core.swf",
+			"loading/loading_progress.swf",
+			"views/view_languageselect.swf",
+			"loading/loading_spinner.swf",
+			"modals/modal_popTutorial.swf",
+			"audio/audio_preloader.swf",
+			"audio/music_preloader.swf"
+        ],
+		"json_files": [
+			{"key":"coreDependencies", "value":"core_dependencies.json"}
+		]
+    }
+}

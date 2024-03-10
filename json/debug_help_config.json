@@ -1,0 +1,11 @@
+[
+	{
+		"command": "test command - please leave here for reference",
+		"arguments": "[args] - args to be displayed in the debug console",
+		"description": "This is the test info that will be shown for the command in the debug console"
+	},
+	{
+		"command": "list_active_licenses",
+		"description": "Lists all currently active licences"
+	}
+]

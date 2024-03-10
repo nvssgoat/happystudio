@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+    <title>Happy Studio Rewritten</title> 
+    <meta itemprop="name" content="Happy Studio Rewritten">
+    <meta itemprop="image" content="./Sources/images/new-logo.png">
+    <meta name="keywords" content="McDonald's, Happy Studio, online world, games, education, kids, macdonalds, Macdonalds, Mcdonalds, MCDonalds, Mcdo, McD's, mcdo, macdo, happymeal, Happy Meal, , Happy, Hamburger, nuggets, Mickey D's, McDees"/>
+    <meta name="description" content="What is Happy Studio Rewritten?
+ Happy Studio Rewritten is a completly free revival of the flash game from McDonald's: Happy Studio, a game that closed in 2015 due to low money profits, in this game, you can have fun with your mates and play various game. (WIP)"/>
+    <meta name="author" content="Fuel Youth"/>
+    
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="application-name" content="Happy Studio"/>
+    <meta name="msapplication-starturl" content="http://www.happystudio.com/parent"/> 
+    <meta name="msapplication-navbutton-color" content="red"/>
+    <meta name="msapplication-TileColor" content="#db272a"/>
+    <meta name="msapplication-square70x70logo" content="http://cdn01web07.happystudio.com/Images/logo/tiny.png?cb=1582063"/>
+    <meta name="msapplication-square150x150logo" content="http://cdn01web10.happystudio.com/Images/logo/square.png?cb=1582063"/>
+    <meta name="msapplication-wide310x150logo" content="http://cdn01web06.happystudio.com/Images/logo/wide.png?cb=1582063"/>
+    <meta name="msapplication-square310x310logo" content="http://cdn01web05.happystudio.com/Images/logo/large.png?cb=1582063"/>
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://web.archive.org/web/20150221094812im_/http://cdn01web10.happystudio.com/Images/apple-touch-icon-144x144-precomposed.png?cb=1582063"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://web.archive.org/web/20150221094812im_/http://cdn01web02.happystudio.com/Images/apple-touch-icon-72x72-precomposed.png?cb=1582063"/>
+    <link rel="apple-touch-icon-precomposed" href="https://web.archive.org/web/20150221094812im_/http://cdn01web10.happystudio.com/Images/apple-touch-icon-precomposed.png?cb=1582063"/>
+
+        <link href="./Sources/stylesheets/css.css" rel="stylesheet" type="text/css"/>
+
+    <!-- rwc: this has not yet been moved due to internal calls made to fetch fonts - HSNEXT-14637 -->
+    <link href="http://vjs.zencdn.net/4.4/video-js.css" rel="stylesheet"/>
+
+    <!--[if lt IE 10 ]>
+    <script type="text/javascript">
+        if(typeof(console) === 'undefined') {var console={}; console.log = console.error = console.info = console.debug = console.warn = console.trace = console.dir = console.dirxml = console.group = console.groupEnd = console.time = console.timeEnd = console.assert = console.profile = function() {};}
+    </script>
+    <![endif]-->
+    
+
+<!-- <script class="trustecm-required" src="./Scripts/ThirdParty/jquery/jquery-1.9.1.min.js?cb=1582063" type="text/javascript"></script> -->
+
+
+    
+    
+
+    
+
+    <script class="trustecm-functional" src="./Scripts/ThirdParty/modernizr/modernizr-2.0.6-development-only.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+            
+        var _pageLoadStarted = new Date(),
+            _parentPageLoadStarted;
+    </script>
+
+
+
+</head>
+
+<body id="home2" class="default">
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wrapper">
+    <div id="main" style="width: 99.99%" kl="frontGates_hktmnt2014">
+ 
+        <div id="mainContatiner">
+            <div id="soundControls" class="topControls">
+            </div>
+            <div class="selectCountryLanguage topControls">
+            </div>
+            <div id="videoContainer">
+                <div id="videoOverlay" style="z-index: 999; position: absolute;">
+                    <div id="overlayContainer">
+                        <div id="happyStudioLogo">
+                        </div>
+                        <div id="playerBtns">
+                            
+                                <div class="playerBtns" id="playerBtnsLeft">
+                                    <a id="newPlayer">
+                                        <img src="./Sources/images/en-gb.png"/>
+                                    </a>
+                                </div>
+                                <div class="playerBtns" id="playerBtnsRight">
+                                    <a id="returningPlayer">
+                                        <img src="./Sources/images/en-gb2.png"/>
+                                    </a>
+                                </div>
+                        </div>
+                        <div id="videoTour">
+                            <div id="vtLeft">
+                            </div>
+                            <div id="vtCenter">
+                                <span>Video tour</span>
+                            </div>
+                            <div id="vtRight">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="frontgatesVideo">
+                    <video class="video-js vjs-default-skin no-vjs-control-bar" id="fgVid" ended="this.play()" poster="./Sources/images/frontGates/frontGates_supermario.jpg" width="760" height="520">
+                        <source src="./Sources/videos/frontGates_nature.mp4" type="video/mp4"/>
+                        <source src="./Sources/videos/frontGates_nature.webm" type="video/webm"/>
+                        <img class="fgVidImg frontGates_hktmnt2014" src="./Sources/images/frontGates/frontGates_hktmnt2014.jpg" width="760" height="520" title="No video playback capabilities"/>
+                    </video>
+                    <img class="fgVidImgBackup frontGates_hktmnt2014" src="./Sources/images/frontGates/frontGates_hktmnt2014.jpg" width="760" height="520" title="No video playback capabilities"/>
+                    <div id="videoFrame">
+                    </div>
+                </div>
+            </div>
+            <div id="bottomnav" class="countryOff">
+                <!--
+                    <div id='helpBtnLeft'></div><div id='helpBtnCenter'></div><div id='helpBtnRight'></div>
+                    -->
+                  <ul id="bottomBtns">
+                    <li><a id="helpBtn" href="./Parent/HelpPage/Panel/index.html">
+                        <div class="footerBtnLeft">
+                            <div id="helpImg">
+                            </div>
+                        </div>
+                        <div class="footerBtnCenter">
+                            <span>QNA</span>
+                        </div>
+                        <div class="footerBtnRight">
+                        </div>
+                    </a></li>
+                    <li><a id="parentsBtn" href="https://discord.gg/wY5xX6b">
+                        <div class="footerBtnLeft">
+                            <div id="parentsImg">
+                            </div>
+                        </div>
+                        <div class="footerBtnCenter">
+                            <span>Discord</span>
+                        </div>
+                        <div class="footerBtnRight">
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+                <div id="copyright">
+
+
+    <p class="copyright">
+        <span class="legalLinks">©2011-2023 McDonald's, Happy Studio Revival Team </span>
+    </p>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var legalLine = $(".legalLinks").html(function (index, currentHtml) {
+                return currentHtml.replace(/\./gi, " ");
+            });
+        });
+    </script>
+<p class="copyright">Made by the Happy Studio Revival Team, originally created by McDonald's LLC, the Happy Meal Character, The Happy Meal, Happy Studio logos are trademarks and © of McDonald's </p>
+<p style="text-align: center; display: block; margin-top: 60px; font-size: 9px; color: #AAA;">4.24.0.13</p>
+
+                </div>
+            </div>
+        </div>
+        <div id="happy_studio_lite-RETURNING-outer" style="z-index: 998; position: absolute;">
+            <div id="happy_studio_lite-RETURNING" class="flashContainer">
+    <dl class="flash_variables" style="visibility: hidden">
+        <dt>TrackingQueueTimer</dt>
+        <dd>10000</dd>
+        <dt>TrackingQueueFlushEvents</dt>
+        <dd>[79]</dd>
+        <dt>current_time</dt>
+        <dd></dd>
+        <dt>current_time_flash</dt>
+        <dd>2015/02/21 09:48:11 UTC</dd>
+        <dt>server_time</dt>
+        <dd></dd>
+        <dt>server_time_flash</dt>
+        <dd>2015/02/21 09:48:11 UTC</dd>
+        <dt>version</dt>
+        <dd>4.24.0.13</dd>
+        <dt>uri</dt>
+        <dd>http://www.happystudio.com/</dd>
+        <dd>en</dd>
+        <dt>host</dt>
+        <dd>pr01photon01.happystudio.com:80:443|pr01photon01.happystudio.com:843:4530|pr01photon02.happystudio.com:80:443|pr01photon02.happystudio.com:843:4530|pr01photon03.happystudio.com:80:443|pr01photon03.happystudio.com:843:4530</dd>
+        <dt>appName</dt>
+        <dd>live1</dd>
+        <dt>CurrentActiveLicense</dt>
+        <dd>TMNT2014</dd>
+        <dt>frontGateVideoAsset</dt>
+        <dd>frontGates_hktmnt2014</dd>
+        <dt>ParentEmail</dt>
+        <dd></dd>
+        <dt>TimeMachine</dt>
+        <dd></dd>
+        <dt>DeepLinkCustomData</dt>
+        <dd></dd>
+        <dt>isVPCrequired</dt>
+        <dd></dd>
+        <dt>showCookieBanner</dt>
+        <dd></dd>
+        <dt>CurrentCountryRegion</dt>
+        <dd>default</dd>
+        <dt>SiteMode</dt>
+        <dd>world</dd>
+        <dt>FlashUrl</dt>
+        <dd>http://happystudiorevival.7m.pl/</dd>
+        <dt>Framework</dt>
+        <dd>swf/happy_studio_framework_lite.swf</dd>
+        <dt>LoginFramework</dt>
+        <dd>swf/happy_studio_login_framework_lite.swf</dd>
+        <dt>RegisterFramework</dt>
+        <dd>swf/happy_studio_direct_registration_framework_lite.swf</dd>
+        <dt>cb</dt>
+        <dd>130689856916296793</dd>
+        <dt>FooterController</dt>
+        <dd>Parents</dd>
+        <dt>BGOffset</dt>
+        <dd></dd>
+        <dt>BackgroundImage</dt>
+        <dd>bg-curtains-world.jpg</dd>
+        <dt>PreBackgroundImage</dt>
+        <dd>prebackground-world.jpg</dd>
+        <dt>FlashWidth</dt>
+        <dd></dd>
+        <dt>CountryList</dt>
+        <dd></dd>
+        <dt>ChangeLanguageAction</dt>
+        <dd>ChangeLanguage</dd>
+    </dl>
+    <div id="noflashwords">
+        <a href="http://www.adobe.com/go/getflash/" target="_blank" onclick="cpTrackEvent(992);">
+            <div id="errorBox" class="purpleBG">
+            </div>
+            <div id="getFlash">
+            </div>
+            <div id="errorHappy">
+            </div>
+        </a>
+    </div>
+</div>
+        </div>
+        <div id="happy_studio_lite-NEW-outer" style="z-index: 998; position: absolute;">
+            <div id="happy_studio_lite-NEW" class="flashContainer">
+    <dl class="flash_variables" style="visibility: hidden">
+        <dt>TrackingQueueTimer</dt>
+        <dd>10000</dd>
+        <dt>TrackingQueueFlushEvents</dt>
+        <dd>[79]</dd>
+        <dt>current_time</dt>
+        <dd></dd>
+        <dt>current_time_flash</dt>
+        <dd>2015/02/21 09:48:11 UTC</dd>
+        <dt>server_time</dt>
+        <dd></dd>
+        <dt>server_time_flash</dt>
+        <dd>2015/02/21 09:48:11 UTC</dd>
+        <dt>version</dt>
+        <dd>4.24.0.13</dd>
+        <dt>uri</dt>
+        <dd>http://www.happystudiorevival.7m.pl</dd>
+        <dt>CountryDetection</dt>
+        <dd></dd>
+        <dt>LanguageDetection</dt>
+        <dd></dd>
+        <dt>countryId</dt>
+        <dd></dd>
+        <dt>cultureCountry</dt>
+        <dd>mt</dd>
+        <dt>languageId</dt>
+        <dd></dd>
+        <dt>cultureLang</dt>
+        <dd>en</dd>
+        <dt>host</dt>
+        <dd>pr01photon01.happystudio.com:80:443|pr01photon01.happystudio.com:843:4530|pr01photon02.happystudio.com:80:443|pr01photon02.happystudio.com:843:4530|pr01photon03.happystudio.com:80:443|pr01photon03.happystudio.com:843:4530</dd>
+        <dt>appName</dt>
+        <dd>live1</dd>
+        <dt>CurrentActiveLicense</dt>
+        <dd>TMNT2014</dd>
+        <dt>frontGateVideoAsset</dt>
+        <dd>frontGates_hktmnt2014</dd>
+        <dt>ParentEmail</dt>
+        <dd></dd>
+        <dt>TimeMachine</dt>
+        <dd></dd>
+        <dt>DeepLinkCustomData</dt>
+        <dd></dd>
+        <dt>isVPCrequired</dt>
+        <dd></dd>
+        <dt>showCookieBanner</dt>
+        <dd></dd>
+        <dt>CurrentCountryRegion</dt>
+        <dd>default</dd>
+        <dt>SiteMode</dt>
+        <dd>world</dd>
+        <dt>FlashUrl</dt>
+        <dd>http://happystudiorevival.7m.pl/</dd>
+        <dt>Framework</dt>
+        <dd>swf/happy_studio_framework_lite.swf</dd>
+        <dt>LoginFramework</dt>
+        <dd>swf/happy_studio_login_framework_lite.swf</dd>
+        <dt>RegisterFramework</dt>
+        <dd>swf/happy_studio_direct_registration_framework_lite.swf</dd>
+        <dt>cb</dt>
+        <dd>130689856916296793</dd>
+        <dt>FooterController</dt>
+        <dd>Parents</dd>
+        <dt>BGOffset</dt>
+        <dd></dd>
+        <dt>BackgroundImage</dt>
+        <dd>bg-curtains-world.jpg</dd>
+        <dt>PreBackgroundImage</dt>
+        <dd>prebackground-world.jpg</dd>
+        <dt>FlashWidth</dt>
+        <dd></dd>
+        <dt>CountryList</dt>
+        <dd></dd>
+        <dt>ChangeLanguageAction</dt>
+        <dd>ChangeLanguage</dd>
+    </dl>
+    <div id="noflashwords">
+        <a href="http://www.adobe.com/go/getflash/" target="_blank" onclick="cpTrackEvent(992);">
+            <div id="errorBox" class="purpleBG">
+            </div>
+            <div id="getFlash">
+            </div>
+            <div id="errorHappy">
+            </div>
+        </a>
+    </div>
+</div>
+        </div>
+    </div>
+    <!--END MAIN-->
+</div>
+<!--END WRAPPER-->
+<div id="dialog-overlay">
+</div>
+
+<div id="changeLanguageWrapper">
+    <div id="dialog-countrySelect" class="reveal-modal columns">
+        <a class="close-reveal-modal">CLOSE &#215;</a>
+        <div class="ModalTop">
+            <div class="icon global">
+            </div>
+            <h2>
+                Change Language
+            </h2>
+        </div>
+        <div class="row">
+                <div class="large-6 columns ModalContainer">
+                    <h2>Latin America </h2>
+                    <ul id="gridList">
+                        <li class="flagContainer"><div class="large-4 columns flag little_flags_ar"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ar">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=ar">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=ar">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_cl"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=cl">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=cl">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=cl">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_uy"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=uy">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=uy">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=uy">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_pe"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=pe">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=pe">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=pe">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ec"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ec">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=ec">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=ec">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_co"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=co">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=co">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=co">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ve"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ve">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=ve">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=ve">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_cr"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=cr">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=cr">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=cr">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_br"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=br">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=br">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=br">Português</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_pa"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=pa">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=pa">Português</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=pa">Español</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_mx"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=mx">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=mx">Português</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=mx">Español</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_py"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=py">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=py">Português</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=py">Español</a></li></ul></li>
+                    </ul>
+                    <nav class="top-bar" id="navList">
+                        <section class="top-bar-section">
+                            <!-- Left Nav Section -->
+                            <ul class="left">
+                                <li class="has-dropdown"><a href="#">Change Language</a>
+                                    <ul class="dropdown">
+                                        <li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ar"></div>Argentina</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ar">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=ar">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=ar">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_cl"></div>Chile</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=cl">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=cl">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=cl">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_uy"></div>Uruguay</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=uy">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=uy">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=uy">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_pe"></div>Peru</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=pe">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=pe">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=pe">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ec"></div>Ecuador</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ec">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=ec">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=ec">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_co"></div>Colombia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=co">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=co">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=co">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ve"></div>Venezuela</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ve">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=ve">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=ve">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_cr"></div>Costa Rica</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=cr">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=cr">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=cr">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_br"></div>Brazil</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=br">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=br">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=br">Português</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_pa"></div>Panama</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=pa">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=pa">Português</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=pa">Español</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_mx"></div>Mexico</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=mx">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=mx">Português</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=mx">Español</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_py"></div>Paraguay</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=py">English</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=py">Português</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=py">Español</a></li></ul><li class="divider"></li></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section>
+                    </nav>
+                </div>
+            <div class="large-6 columns ModalContainer">
+                <h2>Europe</h2>
+
+                <ul id="gridList">
+                    <li class="flagContainer"><div class="large-4 columns flag little_flags_gb"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=gb">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_at"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=at">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=at">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_az"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=az&amp;country_code=az">Azərbaycan dili</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=az">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_by"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ru&amp;country_code=by">Русский язык</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=by">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_be"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=be">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fr&amp;country_code=be">Français</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=nl&amp;country_code=be">Nederlands</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=be">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_bg"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=bg&amp;country_code=bg">Български език</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=bg">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_hr"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=hr&amp;country_code=hr">Hrvatski</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=hr">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_cy"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=el&amp;country_code=cy">ελληνικά</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=cy">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_cz"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=cs&amp;country_code=cz">český jazyk</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=cz">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_dk"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=da&amp;country_code=dk">dansk</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=dk">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ee"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=et&amp;country_code=ee">eesti keel</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ee">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_fi"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fi&amp;country_code=fi">suomen kieli</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=fi">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_fr"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fr&amp;country_code=fr">Français</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ge"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ka&amp;country_code=ge">ქართული ენა</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ge">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_de"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=de">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=de">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_gr"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=el&amp;country_code=gr">ελληνικά</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=gr">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_hu"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=hu&amp;country_code=hu">magyar nyelv</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=hu">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ie"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ie">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_il"></div><ul class="large-8 columns contactNumbers"><li><a class="block rtl" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=he&amp;country_code=il">עברית / עִבְרִית</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=il">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_it"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=it&amp;country_code=it">italiano</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=it">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_lv"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=lv&amp;country_code=lv">latviešu valoda</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=lv">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_lt"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=lt&amp;country_code=lt">lietuvių kalba</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=lt">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_lu"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=lu">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=lu">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_mt"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=mt">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_md"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ro&amp;country_code=md">limba română</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=md">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ma"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fr&amp;country_code=ma">Français</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ma">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_nl"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=nl&amp;country_code=nl">Nederlands</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=nl">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_no"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=nb&amp;country_code=no">Bokmål</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=no">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_pl"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pl&amp;country_code=pl">język polski</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=pl">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_pt"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=pt">Português</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=pt">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ro"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ro&amp;country_code=ro">limba română</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ro">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ru"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ru&amp;country_code=ru">Русский язык</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ru">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_yu"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=sr&amp;country_code=yu">српски језик</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=yu">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_sk"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=sk&amp;country_code=sk">slovenčina</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=sk">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_si"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=sl&amp;country_code=si">slovenščina</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=si">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_es"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=es">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ca&amp;country_code=es">català</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=es">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_se"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=sv&amp;country_code=se">Svenska</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=se">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ch"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=ch">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fr&amp;country_code=ch">Français</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=it&amp;country_code=ch">italiano</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ch">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_tr"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=tr&amp;country_code=tr">Türkçe</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=tr">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ua"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=uk&amp;country_code=ua">Українська</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ua">English</a></li></ul></li><li class="flagContainer"><div class="large-4 columns flag little_flags_ba"></div><ul class="large-8 columns contactNumbers"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=bs&amp;country_code=ba">bosanski</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ba">English</a></li></ul></li>
+                </ul>
+                <nav class="top-bar" id="navList">
+                    <section class="top-bar-section">
+                        <!-- Left Nav Section -->
+                        <ul class="left">
+                            <li class="has-dropdown"><a href="#">Change Language</a>
+                                <ul class="dropdown">
+                                    <li class="has-dropdown"><a href="#"><div class="columns flag little_flags_gb"></div>United Kingdom</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=gb">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_at"></div>Austria</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=at">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=at">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_az"></div>Azerbaijan</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=az&amp;country_code=az">Azərbaycan dili</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=az">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_by"></div>Belarus</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ru&amp;country_code=by">Русский язык</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=by">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_be"></div>Belgium</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=be">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fr&amp;country_code=be">Français</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=nl&amp;country_code=be">Nederlands</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=be">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_bg"></div>Bulgaria</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=bg&amp;country_code=bg">Български език</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=bg">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_hr"></div>Croatia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=hr&amp;country_code=hr">Hrvatski</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=hr">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_cy"></div>Cyprus</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=el&amp;country_code=cy">ελληνικά</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=cy">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_cz"></div>Czech Republic</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=cs&amp;country_code=cz">český jazyk</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=cz">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_dk"></div>Denmark</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=da&amp;country_code=dk">dansk</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=dk">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ee"></div>Estonia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=et&amp;country_code=ee">eesti keel</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ee">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_fi"></div>Finland</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fi&amp;country_code=fi">suomen kieli</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=fi">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_fr"></div>France</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fr&amp;country_code=fr">Français</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ge"></div>Georgia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ka&amp;country_code=ge">ქართული ენა</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ge">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_de"></div>Germany</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=de">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=de">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_gr"></div>Greece</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=el&amp;country_code=gr">ελληνικά</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=gr">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_hu"></div>Hungary</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=hu&amp;country_code=hu">magyar nyelv</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=hu">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ie"></div>Ireland</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ie">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_il"></div>Israel</a><ul class="dropdown"><li><a class="block rtl" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=he&amp;country_code=il">עברית / עִבְרִית</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=il">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_it"></div>Italy</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=it&amp;country_code=it">italiano</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=it">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_lv"></div>Latvia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=lv&amp;country_code=lv">latviešu valoda</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=lv">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_lt"></div>Lithuania</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=lt&amp;country_code=lt">lietuvių kalba</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=lt">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_lu"></div>Luxembourg</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=lu">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=lu">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_mt"></div>Malta</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=mt">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_md"></div>Moldova</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ro&amp;country_code=md">limba română</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=md">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ma"></div>Morocco</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fr&amp;country_code=ma">Français</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ma">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_nl"></div>Netherlands</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=nl&amp;country_code=nl">Nederlands</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=nl">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_no"></div>Norway</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=nb&amp;country_code=no">Bokmål</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=no">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_pl"></div>Poland</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pl&amp;country_code=pl">język polski</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=pl">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_pt"></div>Portugal</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=pt&amp;country_code=pt">Português</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=pt">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ro"></div>Romania</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ro&amp;country_code=ro">limba română</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ro">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ru"></div>Russia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ru&amp;country_code=ru">Русский язык</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ru">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_yu"></div>Serbia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=sr&amp;country_code=yu">српски језик</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=yu">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_sk"></div>Slovakia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=sk&amp;country_code=sk">slovenčina</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=sk">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_si"></div>Slovenia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=sl&amp;country_code=si">slovenščina</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=si">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_es"></div>Spain</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=es&amp;country_code=es">Español</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=ca&amp;country_code=es">català</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=es">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_se"></div>Sweden</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=sv&amp;country_code=se">Svenska</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=se">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ch"></div>Switzerland</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=de&amp;country_code=ch">Deutsch</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=fr&amp;country_code=ch">Français</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=it&amp;country_code=ch">italiano</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ch">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_tr"></div>Turkey</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=tr&amp;country_code=tr">Türkçe</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=tr">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ua"></div>Ukraine</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=uk&amp;country_code=ua">Українська</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ua">English</a></li></ul><li class="divider"></li></li><li class="has-dropdown"><a href="#"><div class="columns flag little_flags_ba"></div>Bosnia</a><ul class="dropdown"><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=bs&amp;country_code=ba">bosanski</a></li><li><a class="block ltr" href="/web/20150221094812/http://www.happystudio.com/Home/ChangeLanguage?short_code=en&amp;country_code=ba">English</a></li></ul><li class="divider"></li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div id="dialog-videoTour" class="reveal-modal columns videoTour">
+    <a class="close-reveal-modal">CLOSE &#215;</a>
+    <div class="ModalTop">
+        <div class="icon video">
+        </div>
+        <h2>
+            Video
+        </h2>
+    </div>
+    <div class="row">
+        <div class="large-12 columns ModalContainer">
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+ <!--       <div id="teconsent">
+            <script type="text/javascript" src="//web.archive.org/web/20150221094812js_/http://consent.truste.com/notice?domain=happystudio.com&amp;c=teconsent&amp;language=fr&amp;country=mt&amp;cookieLink=http%3A%2F%2Fwww.happystudio.com%2FParent%2FPanel%2FPolicy%23section15&amp;behavior=implied&amp;js=bb&amp;noticeType=bb"></script> -->
+        </div>
+    <style>
+        #trustConsentWrapper {
+            width: 100%;
+            background-color: #efefef;
+        }
+
+        #trusteConsentInnerWrap {
+            margin: 0 auto;
+            display: table;
+            height: auto;
+            max-width: 1440px;
+            position: relative;
+            z-index: 999;
+        }
+
+        #truste-consent-track {
+            position: relative !important;
+        }
+        .button2 {
+            color: #3bbfe5 !important;
+        }
+        /*@media only screen and (max-width : 780px) {
+            .messageColumn {
+                width: 100% !important;
+            }
+        }
+
+        #truste-consent-buttons .button1, #truste-consent-buttons .button2 {
+            width: 42% !important;
+            padding: 10px 2% !important;
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width : 780px) {
+            #truste-consent-buttons .button1, #truste-consent-buttons .button2 {
+                width: 100% !important;
+                padding: 10px 0 !important;
+                margin: 15px 0 0 0;
+            }
+
+            #truste-consent-buttons .button2 {
+                margin-bottom: 20px;
+            }
+        }
+
+        #truste-cookie-button {
+            clear: both;
+            margin-left: 0 !important;
+            float: right;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            margin-right: 50px;
+        }
+
+        #truste-consent-buttons img {
+            margin-top: -40px !important;
+            position: relative;
+            clear: right;
+        }*/
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            (function () {
+                var panelRunOnce = false,
+                    consentType,
+                    eventData,
+                    getConsentType,
+                    privaceManagerApiExist = true;
+
+                $("#truste-consent-button").click(function() {
+                    //TRUSTeMessageDismissed 'yes btn'
+                    cpTrackEvent(4053, '{"consent_type":"' + consentType + '"}');
+                });
+                $("#truste-show-consent").click(function() {
+                    //TRUSTeMessageMoreInfo 'learn more btn'
+                    cpTrackEvent(4054, '{"consent_type":"' + consentType + '"}');
+                });
+
+                window.addEventListener("message", function (e) {
+                    console.log('e ', e);
+
+                    try {
+                        eventData = JSON.parse(e.data);
+
+                        //stop checking after the privacymanagerapi has been verified
+                        if( privaceManagerApiExist ){
+                            try {
+                                if(Boolean(eventData.PrivacyManagerAPI.source)) {
+                                    PrivacyManagerAPI = eventData.PrivacyManagerAPI;
+                                    if (PrivacyManagerAPI.source === "implied" && PrivacyManagerAPI.consent === "approved") {
+                                        consentType = PrivacyManagerAPI.source;
+                                        console.log('++ consentType is ', consentType);
+                                        privaceManagerApiExist = false;
+                                    } else if (PrivacyManagerAPI.source === "implied" && PrivacyManagerAPI.consent === "denied") {
+                                        consentType = "express";
+                                        console.log('++ consentType is ', consentType);
+                                    }
+                                }
+                            } catch(e) {
+                                console.log('exception ', e);
+                            }
+                        }
+
+
+                        if(eventData.message === "change_panel" && !panelRunOnce) {
+                            //TRUSTeMessage Modal Displayed
+                            cpTrackEvent(4052, '{"consent_type":"' + consentType + '"}');
+                            panelRunOnce = true;
+                        }
+
+                        if(eventData.message === "submit_preferences") {
+                            console.log("eventData - ", eventData);
+                            switch(eventData.data) {
+                                case "0":
+                                    //REQUIRED COOKIES
+                                    cpTrackEvent(4055, '{"consent_type":"' + consentType + '"}');
+                                    break;
+                                case "1":
+                                    //FUNCTIONAL COOKIES
+                                    cpTrackEvent(4057, '{"consent_type":"' + consentType + '"}');
+                                    break;
+                                default:
+                                    //something...
+                                    break;
+                            }
+                        }
+                    } catch(e) {
+                        console.log('exception ', e);
+                    }
+
+                }, false);
+            })();
+        });
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+    <script class="trustecm-required" src="./Scripts/ThirdParty/jquery-validate/jquery.validate.1.11.0.min.js" type="text/javascript"></script>
+
+
+
+<!--[if lt IE 9]>
+    
+
+    <script class="trustecm-functional" src="http://cdn01web10.happystudio.com/Scripts/ThirdParty/json2/json2.min.js?cb=1582063" type="text/javascript"></script>
+
+<![endif]-->
+
+<script type="text/javascript">
+    var trackingQueueTimer = "10000",
+        trackingQueueFlushEvents = JSON.parse("[79]");
+    var serverTimeCorrection = 1424512091000- (new Date().getTime());
+</script>
+
+<!--   <script src="https://web.archive.org/web/20150221094812js_/http://cdn01web10.happystudio.com/Scripts/Tracking/tracking.min.js?cb=1582063" type="text/javascript"></script> -->
+
+<script type="text/javascript">
+    var userIP = 3438076626,
+        staticContent = 'https://web.archive.org/web/20150221094812/http://cdn01web01.happystudio.com/';
+</script>
+
+<!-- <script src="https://web.archive.org/web/20150221094812js_/http://cdn01web01.happystudio.com/Scripts/Truste/TrusteCSM.js?cb=1582063" type="text/javascript"></script> -->
+
+
+
+    <script class="trustecm-required" src="./Scripts/ThirdParty/swfobject/swfobject.js" type="text/javascript"></script>
+
+
+<!-- rwc: this has not yet been moved due to internal calls made to fetch fonts - HSNEXT-14637 
+<script type="text/javascript" src="http://vjs.zencdn.net/4.4/video.js"></script> -->
+
+    <script type="text/javascript" src="./Scripts/Home/indexScript.min.js"></script>
+
+
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+
+    //ref: https://developers.google.com/analytics/devguides/collection/analyticsjs/domains#disableCookies
+    ga('create', 'UA-394615-60', {
+        'storage': 'none',
+        'clientId': 'bc1b2c89-b75f-4a82-9e07-613a3587de30'
+    });
+
+    /* remove the email=___ for HSTUDIO-14537 */
+    var pagePath = window.location.pathname + window.location.search;
+    var scrubbedPath = pagePath.replace(new RegExp("email(=[^&]*)?|^email(=[^&]*)?&?"), '');
+
+    //ga('send', 'pageview'); //default way of tracking pageview in Google Universal Analytics
+    ga('send', 'pageview', { 'page': scrubbedPath }); //customized
+</script>
+
+
+
+
+
+
+    <script type="text/javascript">
+        
+
+        $(document).ready(function() {
+            var trackHeadReqResponseTime = function(eventid, url, startServerFileTime) {
+                timeSpent = new Date() - startServerFileTime;
+                var countryCode = 'us';
+                var ipAdddress = '204.236.226.210';
+                cpTrackEvent(eventid, '{ "URL": "' + url.replace('http://', '') + '", "ReponseTime": ' + timeSpent + ', "Country": "' + countryCode + '", "IpAddress": "' + ipAdddress + '" }');
+            };
+
+            //perform the head request to this server file and cdn file and log time for getting response; self called 
+            var headRequestTimeTracking = function() {
+                var serverFile = window.location.origin + '/robots.txt'; //server test file for ping request
+                var cdnFile = './favicon.ico'; //cdn test file for ping request
+
+                var eventID_ServerTime = 4050;
+                var eventID_CDNTime = 4051;
+
+                var startServerFileTime = new Date();
+
+                $.ajax({
+                    type : "HEAD",
+                    async : true,
+                    url : serverFile,
+                    success : function(message, text, response) {
+                        if(text == "success") {
+                            trackHeadReqResponseTime(eventID_ServerTime, serverFile, startServerFileTime); //track Server Request Time
+                        }
+                    }
+                });
+
+                var startServerCDNTime = new Date();
+
+                $.ajax({
+                    type : "HEAD",
+                    async : true,
+                    url : cdnFile,
+                    crossDomain : true,
+                    success : function(message, text, response) {
+                        if(text == "success") {
+                            trackHeadReqResponseTime(eventID_CDNTime, cdnFile, startServerCDNTime); //track CDN request time
+                        }
+                    }
+                });
+            }(); 
+            
+
+            var redirectURL = '';
+
+            //redirect to another page
+            if (redirectURL != '') {
+                window.location.href =redirectURL;
+
+            }
+
+            var settings = {
+                siteMode : "dev",
+                isVPCrequired : "False",
+                showModal : "",
+                cdnUrl : "http://happystudiorevival.7m.pl",
+                staticContent : 'https://web.archive.org/web/20150221094812/http://cdn01web01.happystudio.com/',
+                langcode : "en",
+                countrycode : "mt",
+                muted : false,
+                tmActiveStatus : false,
+                currDate : "2015/02/21",
+                latinAmerica : '',
+                videoTourSources :  "<source src='http://happystudiorevival.7m.pl/Sources/videos/VideoTour.mp4' type='video/mp4' ></source><source src='http://happystudiorevival.7m.pl/Sources/videos/VideoTour.webm' type='video/webm' ></source>",
+                tracking : {
+                    hasPass : false,
+                    hasUserId : false,
+                    hasCountryDetect : "True" == "True",
+                    hasLangDetect: "True" == "True"
+                },
+                flashStuff : {
+                    flashKioskUrl : 'http://happystudiorevival.7m.pl',
+                    flashRegisterUrl : 'http://happystudiorevival.7m.pl/swf/happy_studio_direct_registration_framework_lite.swf',
+                    flashLoginUrl : 'http://happystudiorevival.7m.pl/swf/happy_studio_login_framework_lite.swf',
+                    flashBgnd : 'bg-curtains-world.jpg',
+                    flashBottomPartial : '/Home/_bottom'
+                },
+                flashvars : {
+                    asseturl: "http://happystudiorevival.7m.pl",
+                    json_url: "http://happystudiorevival.7m.pl" + "json/",
+                    image_url: "http://happystudiorevival.7m.pl" + "image/",
+                    enable_gzip: "false",
+                    service_url: "https://web.archive.org/web/20150221094812/http://www.happystudio.com/",
+                    cb: "130689856916296793",
+                    country_id: "26",
+                    current_time: "1424480400", 
+                    server_time: "1424512091", 
+                    host: "pr01photon01.happystudio.com:80:443|pr01photon01.happystudio.com:843:4530|pr01photon02.happystudio.com:80:443|pr01photon02.happystudio.com:843:4530|pr01photon03.happystudio.com:80:443|pr01photon03.happystudio.com:843:4530",
+                    app_name: "live1",
+                    parents_email: "",
+                    langcode: "en",
+                    countrycode: "mt",
+                    customData: "", 
+teaser_redirect_url: "/Home/Teaser",                                                            sessioncode: userIP,
+                    regversion: "2",
+                    enable_asset_metadata: "true",
+                    userLoggedIn : false,
+                    loggedInUserId : ''
+                }
+
+            }; //End Settings
+
+            //pass the settings obj into the init fx
+            home.init(settings);
+            // console.log("READY : ", new Date())
+        });
+        //tracking for when all elements are loaded in the dom for the load time
+        $(window).load(function() {
+            var _pageLoadComplete = new Date(),
+                _pageLoadDiff = _pageLoadComplete - _pageLoadStarted;
+
+            cpTrackEvent(1900,
+                '{ "value": "' + _pageLoadDiff + '" }');
+        });
+
+    </script>

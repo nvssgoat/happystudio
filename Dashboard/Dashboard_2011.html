@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Studio</title>
+    
+    <meta name="keywords" content="McDonald's, Happy Studio, monde en ligne, jeux, éducatif, enfants, macdonalds, Macdonalds, Mcdonalds, MCDonalds, Mcdo, McD's, mcdo, macdo, happymeal, Happy Meal, , Happy, Hamburger, nuggets, Mickey D's, McDees" />
+    <meta name="description" content="Qu'est­ce que le Happy Studio?
+Happy Studio est un monde en ligne, entièrement gratuit, créé par McDonald's afin d'offrir aux enfants des jeux, des expériences et des activités amusants et éducatifs qui favorisent les activités en famille, le partage et les récompenses, tout en mettant en scène nos célèbres personnages. Vous pourrez suivre les comptes de vos enfants, voir les jeux auxquels ils jouent, admirer les créations qu'ils vous ont préparées et les récompenser avec des Étoiles ! Les Étoiles représentent les jetons de notre monde virtuel que les enfants peuvent accumuler grâce aux jeux, aux activités ou à votre discrétion, comme récompense pour l'aide qu'ils vous apportent à la maison." />
+    <meta name="author" content="Fuel Youth" />
+    
+    <meta name="application-name" content="Happy Studio"/>
+    <meta name="msapplication-starturl" content="http://www.happystudio.com/parents" />
+    <meta name="msapplication-navbutton-color" content="red" />
+    <meta name="msapplication-TileImage" content="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/favicon_144x144.png"/>
+    <meta name="msapplication-TileColor" content="#db272a"/>
+    <link rel="icon" href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/apple-touch-icon-precomposed.png" />
+
+    <link href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/css/reset.css.gzip" rel="stylesheet" type="text/css" />
+    <link href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/css/Site.css.gzip" rel="stylesheet" type="text/css" />
+    
+    <link href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/css/jquery-ui-1.8.24.custom.css.gzip" rel="stylesheet" type="text/css" />
+    <link href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/videoJs-4.0.4/video-js.css.gzip" rel="stylesheet" type="text/css" />
+    <link href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/videoJs-4.0.4/video-js-fuel.css.gzip" rel="stylesheet" type="text/css" />
+    
+    <link href="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/css/ff_font.css.gzip" rel="stylesheet" type="text/css" />
+
+    <script src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/swfobject.js.gzip" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/videoJs-4.0.4/video.dev.js.gzip"></script>
+
+    <script type="text/javascript" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/soundmanager2-jsmin.js.gzip"></script>
+
+    <script type="text/javascript" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/tracking.js.gzip"></script>
+    <script type="text/javascript" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/kontagent_api.js.gzip"></script>
+    <script type="text/javascript" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/indexScript.js.gzip"></script>
+    <script type="text/javascript">
+        
+        // configure and instantiate Kontagent  object
+        var ktApi = new KontagentApi('53dab84ccb4d4016982948b1326526f7', {useTestServer : (TestServerCookie[kontagent_cookie_name] == 'true')}),
+            ktPreRegApi = new KontagentApi('aa3dabde47cb4cf88871e33fa84f89c8', {useTestServer : (TestServerCookie[kontagent_cookie_name] == 'true')}),
+            ktThrowawayApi = new KontagentApi('1ed387b6e4004782888b8772b17caf89', {useTestServer : (TestServerCookie[kontagent_cookie_name] == 'true')}),
+            userIP = 1446768444,
+            staticContent = 'http://hsdevtemp.blob.core.windows.net/hsdevnext-web/';
+    </script>
+
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    //_gaq.push(['_setAccount', 'UA-394615-60']); <<- already set in Web.config
+    _gaq.push(['_setAccount', 'UA-394615-60']);
+
+    /* remove the email=___ for HSTUDIO-14537 */
+    var pagePath = window.location.pathname + window.location.search;
+    var scrubbedPath = pagePath.replace(new RegExp("email(=[^&]*)?|^email(=[^&]*)?&?"), '');
+    _gaq.push(['_trackPageview', scrubbedPath]);
+    //_gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+    
+        <script type="text/javascript" src="https://jira.fuelindustries.com/s/en_CAtbraeg/768/38/1.2.2/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=2af10417"></script>
+</head>
+
+<body id="home2" class="default">
+    
+<style>
+      
+    #bottom_nav_help
+    {
+        background-image: url("http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/en/menus/nav-bottom.png");
+    }
+    #bottom_nav_parents
+    {
+        background-image: url("http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/en/menus/nav-bottom.png");
+        background-position: 156px 0;
+    }
+    #bottom_nav_change_language {
+        background-image: url("http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/en/menus/nav-bottom.png");
+        background-position: 340px 0;
+    }
+
+</style>
+<div id="wrapper">
+    <div id="main" style="width: 99.99%">
+        <div id="mainContatiner">
+            <div id="soundControls" class="topControls">
+            </div>
+            <div class="selectCountryLanguage topControls">
+                <div class="countrySelectHeadLeft">
+                </div>
+                <div class="countrySelectHeadCenter">
+                    <img class="countryFlag" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/flags/rounded/flag_gb.png" alt="" />
+                    <span class="leftSection GrilledCheese">Change Language</span>
+                </div>
+                <div class="countrySelectHeadRight">
+                </div>
+            </div>
+            <div id="videoContainer">
+                <div id="videoOverlay" style="z-index: 999; position: absolute;">
+                    <div id="overlayContainer">
+                        <div id="happyStudioLogo">
+                        </div>
+                        <div id="playerBtns">
+                            
+                                <div class="playerBtns" id="playerBtnsLeft">
+                                    <a id="newPlayer">
+                                        <img src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/home/newPlayer/en-gb.png" />
+                                    </a>
+                                </div>
+                                <div class="playerBtns" id="playerBtnsRight">
+                                    <a id="returningPlayer">
+                                        <img src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/home/returningPlayer/en-gb.png" />
+                                    </a>
+                                </div>
+                        </div>
+                        <div id="videoTour" class="GrilledCheese">
+                            <div id="vtLeft">
+                            </div>
+                            <div id="vtCenter">
+                                <span>Video Tour</span>
+                            </div>
+                            <div id="vtRight">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="frontgatesVideo">
+                    <video class="video-js vjs-default-skin no-vjs-control-bar" id="fgVid" ended="this.play()"  poster="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/home/frontGateStills/frontGates_default.jpg" width="760" height="520">
+                        <source src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Video/frontGates/frontGates_default.mp4" type="video/mp4" />
+                        <source src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Video/frontGates/frontGates_default.webm" type="video/webm" />
+                        <source src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Video/frontGates/frontGates_default.ogv" type="video/ogg" />
+                        
+                        <img class="fgVidImg frontGates_default" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/home/frontGateStills/frontGates_default.jpg" width="760" height="520" title="No video playback capabilities" />
+                    </video>
+                    <img class="fgVidImgBackup frontGates_default" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/home/frontGateStills/frontGates_default.jpg" width="760" height="520" title="No video playback capabilities" />
+                    <div id="videoFrame">
+                    </div>
+                </div>
+            </div>
+            <div id="bottomnav" class="countryOff">
+<div id="timemachine">
+    <p>
+        Current Active License: <span></span></p>
+    <p>
+        Time Machine:
+    </p>
+    <input class="datepicker" />
+    <select class="timeMachineLicenses">
+        <option value="2014/01/31">
+            SELECT LICENSE</option>
+                <option value="2013/06/12">2013/06/12 - Despicable Me 2</option>
+                <option value="2013/05/13">2013/05/13 - Despicable Me 2 Pre-Promote 2</option>
+                <option value="2013/05/08">2013/05/08 - Nature - Epic</option>
+                <option value="2013/03/27">2013/03/27 - The Croods</option>
+                <option value="2013/03/25">2013/03/25 - RotG_OutNow</option>
+                <option value="2013/02/25">2013/02/25 - The Croods Pre-Promote</option>
+                <option value="2013/02/13">2013/02/13 - YooHoo and Friends</option>
+                <option value="2013/02/10">2013/02/10 - Happy Celebration</option>
+                <option value="2013/01/29">2013/01/29 - RotG_ComingSoon</option>
+                <option value="2013/01/09">2013/01/09 - MEL Books</option>
+                <option value="2012/11/28">2012/11/28 - Rise of the Guardians</option>
+                <option value="2012/10/29">2012/10/29 - Rise of the Guardians Pre-Promote</option>
+                <option value="2012/10/10">2012/10/10 - Madagascar 3</option>
+                <option value="2012/09/10">2012/09/10 - madagascar pre-promote</option>
+                <option value="2012/08/29">2012/08/29 - Spongebob Squarepants</option>
+                <option value="2012/08/03">2012/08/03 - Olympics 2012 - UK</option>
+                <option value="2012/06/20">2012/06/20 - Ice Age 4</option>
+                <option value="2012/05/16">2012/05/16 - Nature</option>
+                <option value="2012/03/20">2012/03/20 - The Pirates!</option>
+                <option value="2012/03/12">2012/03/12 - Happy Studio</option>
+                <option value="2012/02/08">2012/02/08 - Tom and Jerry</option>
+                <option value="2011/11/30">2011/11/30 - Mudpuddle Books</option>
+                <option value="2011/11/30">2011/11/30 - Puss in Boots</option>
+                <option value="2011/11/30">2011/11/30 - Tin Tin</option>
+                <option value="2011/11/30">2011/11/30 - Smurfs</option>
+                <option value="2011/11/30">2011/11/30 - Megamind</option>
+                <option value="2011/11/30">2011/11/30 - Shrek</option>
+                <option value="2011/11/30">2011/11/30 - Faries And Dragons</option>
+                <option value="2011/11/30">2011/11/30 - Endangered Animals</option>
+                <option value="2011/11/30">2011/11/30 - Crazy Science</option>
+                <option value="2011/04/17">2011/04/17 - Mascotathon</option>
+                <option value="2011/01/01">2011/01/01 - Underwater Happy</option>
+    </select>
+    Test Server:
+    <input id="toggleTestServer" type="button" onclick="toggleKontagentTestServer()" />
+    <script>
+        var TestServerButtonText = (TestServerCookie[kontagent_cookie_name] == 'true') ? "Turn Off" : "Turn on";
+        $("#toggleTestServer").attr('value', TestServerButtonText);
+    </script>
+</div>
+                <!--
+                    <div id='helpBtnLeft'></div><div id='helpBtnCenter'></div><div id='helpBtnRight'></div>
+                    -->
+                
+                    <ul id="bottomBtns">
+                        <li>
+                            <a id="helpBtn" class="GrilledCheese"  onclick="trackHelpClick('http://hsdevnext.cloudapp.net/Parent/Panel/Help');">
+                                <div class="footerBtnLeft">
+                                    <div id="helpImg"></div>
+                                </div>
+                                <div class="footerBtnCenter">
+                                    <span>Help</span>
+                                </div>
+                                <div class="footerBtnRight"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="parentsBtn" class="GrilledCheese"  onclick="trackGrownUpsClick('http://hsdevnext.cloudapp.net/Parent/Panel/Index');">
+                                <div class="footerBtnLeft">
+                                    <div id="parentsImg"></div>
+                                </div>
+                                <div class="footerBtnCenter">
+                                    <span>GROWN UPS</span>
+                                </div>
+                                <div class="footerBtnRight"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="selectCountryLanguage bottomControls">
+                                <div class="countrySelectFooterLeft"></div>
+                                <div class="countrySelectFooterCenter">
+                                    <img class="countryFlag" src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/flags/rounded/flag_gb.png" alt="" />
+                                    <span class="leftSection GrilledCheese"> Change Language</span>
+                                </div>
+                                <div class="countrySelectFooterRight"></div>
+                            </div>   
+                        </li>
+                </ul>
+                <div id="copyright">
+    <div id="cookieBanner">
+        <div id="cookieBgTop">
+        </div>
+        <div id="cookieBgMid">
+            <span class="newBullet">New!</span>
+            <p style="margin-left: ; width: ;">This website uses cookies to give you the very best experience. If you continue without changing your cookie settings, you consent to this - but if you want, you can change your settings. Our <a id='cookiesLink' href='/Parent/Panel/Policy#section15'>Cookies Section</a> of the <a id='cookiesPolicyLink' href='/Parent/Panel/Policy'>Privacy and Cookies Policy</a> explains how to do this.</p>
+            <span class="fillTRUSTeBox"></span>
+        </div>
+        <div id="cookieBgBottom">
+        </div>
+    </div>
+<p class="copyright">©2014 McDonald's LLC <a href="/Parent/Panel/Terms">Terms and Conditions</a>&nbsp;&nbsp;<a href="/Parent/Panel/Policy">Privacy Policy</a>.</p>
+<p class="copyright">McDonald&#39;s, the Happy Meal Character, The Happy Meal, Happy Studio logos are trademarks and &#169; of McDonald&#39;s</p>
+<p style="text-align: center; display: block; margin-top: 60px; font-size: 9px; color: #AAA;">1.0.0.359</p>                </div>
+            </div>
+        </div>
+        <div id="happy_studio_lite-RETURNING-outer" style="z-index: 998; position: absolute;">
+            
+<div id="happy_studio_lite-RETURNING" class="flashContainer">
+    <dl class="flash_variables" style="visibility: hidden">
+        <dt>version</dt>
+        <dd>1.0.0.359</dd>
+        <dt>uri</dt>
+        <dd>http://hsdevnext.cloudapp.net/</dd>
+        <dt>CountryDetection</dt>
+        <dd></dd>
+        <dt>LanguageDetection</dt>
+        <dd></dd>
+        <dt>countryId</dt>
+        <dd></dd>
+        <dt>cultureCountry</dt>
+        <dd>gb</dd>
+        <dt>languageId</dt>
+        <dd></dd>
+        <dt>cultureLang</dt>
+        <dd>en</dd>
+        <dt>host</dt>
+        <dd>hsdevnext-photon.cloudapp.net:80:443|hsdevnext-photon.cloudapp.net:843:4530|hsdevnext-photon.cloudapp.net:80:443|hsdevnext-photon.cloudapp.net:843:4530</dd>
+        <dt>appName</dt>
+        <dd>HappyStudioDev</dd>
+        <dt>current_time</dt>
+        <dd></dd>
+        <dt>frontGateVideoAsset</dt>
+        <dd>frontGates_default</dd>
+        <dt>ParentEmail</dt>
+        <dd>kakaperecke@gmail.com</dd>
+        <dt>TimeMachine</dt>
+        <dd></dd>
+        <dt>TimeMachineLicenses</dt>
+        <dd></dd>
+        <dt>ogcurl</dt>
+        <dd>http://www.staging.championsofplay.com/challenge/{language_code}/{country_code}</dd>
+        <dt>SiteMode</dt>
+        <dd>world</dd>
+        <dt>FlashUrl</dt>
+        <dd>http://hsdevtemp.blob.core.windows.net/hsdevnext-flash/</dd>
+        <dt>Framework</dt>
+        <dd>swf/happy_studio_framework_lite.swf</dd>
+        <dt>cb</dt>
+        <dd>130356450535575735</dd>
+        <dt>FooterController</dt>
+        <dd>Parents</dd>
+        <dt>BGOffset</dt>
+        <dd></dd>
+        <dt>BackgroundImage</dt>
+        <dd>bg-curtains-world.jpg</dd>
+        <dt>PreBackgroundImage</dt>
+        <dd>prebackground-world.jpg</dd>
+        <dt>FlashWidth</dt>
+        <dd></dd>
+        <dt>CountryList</dt>
+        <dd></dd>
+        <dt>LoginFramework</dt>
+        <dd>swf/happy_studio_login_framework_lite.swf</dd>
+        <dt>RegisterFramework</dt>
+        <dd>swf/happy_studio_registration_framework_lite.swf</dd>
+    </dl>
+    <div id="noflashwords">
+        <a href="http://www.adobe.com/go/getflash/" target="_blank" onclick="cpTrackEvent(992);">
+            <div id="errorBox" class="purpleBG">
+            </div>
+            <div id="getFlash">
+            </div>
+            <div id="errorHappy">
+            </div>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    if (typeof window.loadFlash === 'undefined') {
+        var loadFlash = function (versionCheck, flashUrl, id, flashWidth, flashHeight, flashVersion, flashvars, params, attributes) {
+            if (window.swfobject && window.swfobject.hasFlashPlayerVersion(versionCheck)) {
+                cpTrackEvent(991); //, flashVersion);
+                if (flashvars === undefined || flashvars == null)
+                    flashvars = [];
+                var container = $('#' + id);
+                var specifiedVariables = $('dl', container);
+                var children = specifiedVariables.children();
+                for (var index = 0; index < children.length; index += 2) {
+                    var dt = $(children[index]).html();
+                    var dd = $(children[index + 1]).html();
+                    if (flashvars[dt] === undefined)
+                        flashvars[dt] = dd;
+                }
+                window.swfobject.embedSWF(flashUrl, id, flashWidth, flashHeight, flashVersion, flashUrl, flashvars, params, attributes);
+            } else {
+                /* 
+                * passing in the version of flash that failed is problematic as our cpTracking is expecting a number not a string... and I'm tired... see line 27 also
+                */
+                var getFlashVersion = window.swfobject.getFlashPlayerVersion();
+                var getFlashVersionString = "" + getFlashVersion.major + "." + getFlashVersion.minor + "." + getFlashVersion.release;
+
+                cpTrackEvent(990); //, "{ 'version':" + getFlashVersionString +" }");
+            }
+        };
+    }
+</script>
+        </div>
+        <div id="happy_studio_lite-NEW-outer" style="z-index: 998; position: absolute;">
+            <script type="text/javascript">
+                function toggleTruste() {
+                    if ($("div.trusteBox_overlay").length)
+                    {
+                        $('.trusteBox_overlay').toggle();
+                        return true;
+                    } else {
+                        loadTruste();
+                    }
+                }
+                function fillTruste(response) {
+                    if (response.status !== 200) {
+                        return false;
+                    } else {
+                        console.log(response);
+                        $("#trusteBox_wrapper").append(response.responseText);
+                        $("#trusteBox_wrapper div.trusteBox").removeClass('trusteBox').addClass('trusteBox_overlay');
+                        return true;
+                    }
+                }
+                function loadTruste() { 
+                    // append the truste content
+                    $.ajax({
+                        url: '/home/_TRUSTeBox',
+                        //data: { CSSClass: 'trusteBox_overlay' },
+                        dataType: 'html',
+                        complete: function (response) {
+                            fillTruste(response);
+                        }
+                    });
+                }
+            </script>
+            <div id="trusteBox_wrapper">
+
+            </div>
+            
+<div id="happy_studio_lite-NEW" class="flashContainer">
+    <dl class="flash_variables" style="visibility: hidden">
+        <dt>version</dt>
+        <dd>1.0.0.359</dd>
+        <dt>uri</dt>
+        <dd>http://hsdevnext.cloudapp.net/</dd>
+        <dt>CountryDetection</dt>
+        <dd></dd>
+        <dt>LanguageDetection</dt>
+        <dd></dd>
+        <dt>countryId</dt>
+        <dd></dd>
+        <dt>cultureCountry</dt>
+        <dd>gb</dd>
+        <dt>languageId</dt>
+        <dd></dd>
+        <dt>cultureLang</dt>
+        <dd>en</dd>
+        <dt>host</dt>
+        <dd>hsdevnext-photon.cloudapp.net:80:443|hsdevnext-photon.cloudapp.net:843:4530|hsdevnext-photon.cloudapp.net:80:443|hsdevnext-photon.cloudapp.net:843:4530</dd>
+        <dt>appName</dt>
+        <dd>HappyStudioDev</dd>
+        <dt>current_time</dt>
+        <dd></dd>
+        <dt>frontGateVideoAsset</dt>
+        <dd>frontGates_default</dd>
+        <dt>ParentEmail</dt>
+        <dd>kakaperecke@gmail.com</dd>
+        <dt>TimeMachine</dt>
+        <dd></dd>
+        <dt>TimeMachineLicenses</dt>
+        <dd></dd>
+        <dt>ogcurl</dt>
+        <dd>http://www.staging.championsofplay.com/challenge/{language_code}/{country_code}</dd>
+        <dt>SiteMode</dt>
+        <dd>world</dd>
+        <dt>FlashUrl</dt>
+        <dd>http://hsdevtemp.blob.core.windows.net/hsdevnext-flash/</dd>
+        <dt>Framework</dt>
+        <dd>swf/happy_studio_framework_lite.swf</dd>
+        <dt>cb</dt>
+        <dd>130356450535575735</dd>
+        <dt>FooterController</dt>
+        <dd>Parents</dd>
+        <dt>BGOffset</dt>
+        <dd></dd>
+        <dt>BackgroundImage</dt>
+        <dd>bg-curtains-world.jpg</dd>
+        <dt>PreBackgroundImage</dt>
+        <dd>prebackground-world.jpg</dd>
+        <dt>FlashWidth</dt>
+        <dd></dd>
+        <dt>CountryList</dt>
+        <dd></dd>
+        <dt>LoginFramework</dt>
+        <dd>swf/happy_studio_login_framework_lite.swf</dd>
+        <dt>RegisterFramework</dt>
+        <dd>swf/happy_studio_registration_framework_lite.swf</dd>
+    </dl>
+    <div id="noflashwords">
+        <a href="http://www.adobe.com/go/getflash/" target="_blank" onclick="cpTrackEvent(992);">
+            <div id="errorBox" class="purpleBG">
+            </div>
+            <div id="getFlash">
+            </div>
+            <div id="errorHappy">
+            </div>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    if (typeof window.loadFlash === 'undefined') {
+        var loadFlash = function (versionCheck, flashUrl, id, flashWidth, flashHeight, flashVersion, flashvars, params, attributes) {
+            if (window.swfobject && window.swfobject.hasFlashPlayerVersion(versionCheck)) {
+                cpTrackEvent(991); //, flashVersion);
+                if (flashvars === undefined || flashvars == null)
+                    flashvars = [];
+                var container = $('#' + id);
+                var specifiedVariables = $('dl', container);
+                var children = specifiedVariables.children();
+                for (var index = 0; index < children.length; index += 2) {
+                    var dt = $(children[index]).html();
+                    var dd = $(children[index + 1]).html();
+                    if (flashvars[dt] === undefined)
+                        flashvars[dt] = dd;
+                }
+                window.swfobject.embedSWF(flashUrl, id, flashWidth, flashHeight, flashVersion, flashUrl, flashvars, params, attributes);
+            } else {
+                /* 
+                * passing in the version of flash that failed is problematic as our cpTracking is expecting a number not a string... and I'm tired... see line 27 also
+                */
+                var getFlashVersion = window.swfobject.getFlashPlayerVersion();
+                var getFlashVersionString = "" + getFlashVersion.major + "." + getFlashVersion.minor + "." + getFlashVersion.release;
+
+                cpTrackEvent(990); //, "{ 'version':" + getFlashVersionString +" }");
+            }
+        };
+    }
+</script>
+        </div>
+    </div>
+    <!--END MAIN-->
+</div>
+<!--END WRAPPER-->
+<div id="dialog-overlay">
+</div>
+<div id="dialog-countrySelect">
+    <div id="changelanguage_view">
+        <div id="changelanguage_text" class="block relative TitleIndent GrilledCheese">Change Language</div>
+        <div class="modalClose">
+        </div>
+        <div id="changelanguage_window" class="relative">
+            <ul id="language_flags" class="display-table relative">
+                <li id="blank_list_item" class="float-left"></li>
+                    <li class="float-left activecountry" id="gb">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolOne">
+                                    <div class="bigFlag" id="bigFlag_gb">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=gb">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=gb" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="at">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_at">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=at">Deutsch</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=at">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=at" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="az">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_az">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=az&amp;country_code=az">Azərbaycan dili</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=az">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=az&amp;country_code=az" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="by">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_by">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=ru&amp;country_code=by">Русский язык</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=by">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=ru&amp;country_code=by" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="be">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolFour">
+                                    <div class="bigFlag" id="bigFlag_be">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=be">Deutsch</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=fr&amp;country_code=be">Fran&#231;ais</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Red" href="/Home/ChangeLanguageConfirm?short_code=nl&amp;country_code=be">Nederlands</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Purple" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=be">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=be" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="bg">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_bg">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=bg&amp;country_code=bg">Български език</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=bg">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=bg&amp;country_code=bg" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="hr">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_hr">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=hr&amp;country_code=hr">Hrvatski</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=hr">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=hr&amp;country_code=hr" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="cy">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_cy">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=el&amp;country_code=cy">ελληνικά</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=cy">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=el&amp;country_code=cy" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="cz">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_cz">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=cs&amp;country_code=cz">česk&#253; jazyk</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=cz">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=cs&amp;country_code=cz" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="dk">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_dk">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=da&amp;country_code=dk">dansk</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=dk">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=da&amp;country_code=dk" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ee">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_ee">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=et&amp;country_code=ee">eesti keel</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ee">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=et&amp;country_code=ee" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="fi">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_fi">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=fi&amp;country_code=fi">suomen kieli</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=fi">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=fi&amp;country_code=fi" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="fr">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_fr">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=fr&amp;country_code=fr">Fran&#231;ais</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=fr">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=fr&amp;country_code=fr" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ge">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_ge">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=ka&amp;country_code=ge">ქართული ენა</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ge">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=ka&amp;country_code=ge" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="de">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_de">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=de">Deutsch</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=de">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=de" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="gr">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_gr">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=el&amp;country_code=gr">ελληνικά</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=gr">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=el&amp;country_code=gr" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="hu">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_hu">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=hu&amp;country_code=hu">magyar nyelv</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=hu">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=hu&amp;country_code=hu" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ie">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolOne">
+                                    <div class="bigFlag" id="bigFlag_ie">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ie">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ie" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="il">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_il">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=he&amp;country_code=il">עברית / עִבְרִית</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=il">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=he&amp;country_code=il" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="it">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_it">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=it&amp;country_code=it">italiano</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=it">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=it&amp;country_code=it" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="lv">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_lv">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=lv&amp;country_code=lv">latviešu valoda</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=lv">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=lv&amp;country_code=lv" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="lt">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_lt">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=lt&amp;country_code=lt">lietuvių kalba</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=lt">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=lt&amp;country_code=lt" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="lu">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_lu">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=lu">Deutsch</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=lu">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=lu" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="mk">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_mk">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=mk&amp;country_code=mk">македонски јазик</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=mk">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=mk&amp;country_code=mk" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="mt">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolOne">
+                                    <div class="bigFlag" id="bigFlag_mt">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=mt">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=mt" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="md">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_md">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=ro&amp;country_code=md">limba rom&#226;nă</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=md">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=ro&amp;country_code=md" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ma">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_ma">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=fr&amp;country_code=ma">Fran&#231;ais</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ma">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=fr&amp;country_code=ma" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="nl">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_nl">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=nl&amp;country_code=nl">Nederlands</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=nl">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=nl&amp;country_code=nl" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="no">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_no">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=no&amp;country_code=no">Norsk</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=no">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=no&amp;country_code=no" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="pl">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_pl">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=pl&amp;country_code=pl">język polski</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=pl">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=pl&amp;country_code=pl" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="pt">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_pt">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=pt&amp;country_code=pt">Portugu&#234;s</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=pt">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=pt&amp;country_code=pt" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ro">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_ro">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=ro&amp;country_code=ro">limba rom&#226;nă</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ro">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=ro&amp;country_code=ro" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ru">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_ru">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=ru&amp;country_code=ru">Русский язык</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ru">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=ru&amp;country_code=ru" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="yu">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_yu">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=sr&amp;country_code=yu">српски језик</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=yu">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=sr&amp;country_code=yu" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="sk">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_sk">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=sk&amp;country_code=sk">slovenčina</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=sk">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=sk&amp;country_code=sk" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="si">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_si">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=sl&amp;country_code=si">slovenščina</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=si">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=sl&amp;country_code=si" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="es">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolThree">
+                                    <div class="bigFlag" id="bigFlag_es">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=es&amp;country_code=es">espa&#241;ol</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=ca&amp;country_code=es">catal&#224;</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Red" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=es">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=es&amp;country_code=es" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="se">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_se">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=sv&amp;country_code=se">Svenska</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=se">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=sv&amp;country_code=se" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ch">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolFour">
+                                    <div class="bigFlag" id="bigFlag_ch">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=ch">Deutsch</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=fr&amp;country_code=ch">Fran&#231;ais</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Red" href="/Home/ChangeLanguageConfirm?short_code=it&amp;country_code=ch">italiano</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Purple" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ch">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=de&amp;country_code=ch" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="tr">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_tr">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=tr&amp;country_code=tr">T&#252;rk&#231;e</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=tr">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=tr&amp;country_code=tr" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ua">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_ua">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=uk&amp;country_code=ua">Українська</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ua">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=uk&amp;country_code=ua" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+                    <li class="float-left activecountry" id="ba">
+                            <div class="language_popup float-left pointer">
+                                <div class="countryTool countryToolTwo">
+                                    <div class="bigFlag" id="bigFlag_ba">
+                                    </div>
+                                    <ul class="language_options">
+                                            <li class="float-left language_option Arial"><a class="changeCountryLink block Blue" href="/Home/ChangeLanguageConfirm?short_code=bs&amp;country_code=ba">bosanski</a>
+                                            </li>
+                                            <li class="float-left language_option GrilledCheese"><a class="changeCountryLink block Green" href="/Home/ChangeLanguageConfirm?short_code=en&amp;country_code=ba">English</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="/Home/ChangeLanguageConfirm?short_code=bs&amp;country_code=ba" onclick="cpTrackEvent(824);">
+                            </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="dialogVideoTour" style="background-color: #333;">
+    <div class="modalClose">
+    </div>
+    <video class="video-js vjs-fuel-skin" id="vidVT" poster="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Images/home/sizzleVideoPoster.png" width="680" height="382">
+            <source src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Video/SizzleVideo/en-GB/happy_studio_main_timeline.mp4" type="video/mp4" />
+            <source src="http://hsdevtemp.blob.core.windows.net/hsdevnext-web/Video/SizzleVideo/en-GB/happy_studio_main_timeline.ogv" type="video/ogg" />
+    </video>
+    
+</div>
+
+<script type="text/javascript">
+    var UserFlow = "B";
+    
+    $(document).ready(function() {
+        var cdnUrl = "http://hsdevtemp.blob.core.windows.net/hsdevnext-flash/",
+            staticContent = 'http://hsdevtemp.blob.core.windows.net/hsdevnext-web/',
+            noMedia = "",
+            flashvars = {
+                   
+                asseturl: cdnUrl,
+                json_url: cdnUrl + "json/",
+                image_url: cdnUrl + "image/",
+                enable_gzip: "true",
+                service_url: "http://hsdevnext.cloudapp.net/",
+                cb: "130356450535575735",
+                country_id: "1",
+                current_time: "1391171453",
+                host: "hsdevnext-photon.cloudapp.net:80:443|hsdevnext-photon.cloudapp.net:843:4530|hsdevnext-photon.cloudapp.net:80:443|hsdevnext-photon.cloudapp.net:843:4530",
+                app_name: "HappyStudioDev",
+                //parents_email: "kakaperecke@gmail.com",
+                parents_email: "kakaperecke@gmail.com",
+                langcode: "en",
+                ogc : "",
+                ogcurl : "http://www.staging.championsofplay.com/challenge/{language_code}/{country_code}",
+                countrycode: "gb"
+, teaser_redirect_url: "/Home/Teaser",
+                sessioncode: userIP,
+                regversion: "2", 
+                enable_asset_metadata: "true" 
+            },
+            params = {
+                allowFullScreen: "true",
+                allowScriptAccess: "always",
+                wmode: "direct" //should be 'opaque' in Live mode, 'direct' in Dev - for HSTUDIO-27351
+            },
+            attributes = {
+                style:"outline: none;"
+            },
+            tracking = function(){
+                
+            },
+            setupCountryLinkTracking = function(){
+                var link = $(".changeCountryLink");
+                //link.attr('href','#')
+                link.click(function(event) {
+                    var href = $(this).attr('href');
+                    var logged = false;
+                    if (!userLoggedIn)
+                        logged = cpTrackEvent(824); 
+                    else 
+                        logged = cpTrackEvent(2217, '{"userId" : ' + loggedInUserId +' }'); 
+                    //console.log('logged',logged)
+                    if(logged === true) {
+                        //console.log('href ',location.href + href);
+                        setTimeout(function() { window.location = href; }, 800);
+                    }
+//                    var test = cpTrackEvent(824)
+//                    console.log('test',test)
+                    event.preventDefault();
+                    
+                });                     
+            },
+            _timemachineDate,
+            TimeMachineInit = function() {
+                var currDate = new Date('2014/01/31'),
+                    timeMachineLicenses = $('.timeMachineLicenses'),
+                    datepick = $('.datepicker');
+                
+                var onDatePickerClosed = function(date) {
+                    if (date != undefined && date != "" && date != _timemachineDate) {
+                        window.location = window.location.protocol + '//' + window.location.host + window.location.pathname + "?datetime=" + date + " 00:01:00 UTC";
+                    }
+                };
+
+                datepick.datepicker({
+                    dateFormat: "yy/mm/dd",
+                    onClose: onDatePickerClosed,
+                    beforeShow: function (textbox, instance) {
+                        instance.dpDiv.css({
+                            //marginTop: (-textbox.offsetHeight + 203) + 'px',
+                            //marginLeft: textbox.offsetWidth + 'px',
+                            position: 'fixed'
+                        });
+                    }
+                }).datepicker("setDate", currDate);
+                _timemachineDate = $('.datepicker').val();
+                timeMachineLicenses.change(function() {
+                    datepick.datepicker("setDate", $(this).val());
+                    onDatePickerClosed($(this).val());
+                });
+            };
+        //END VARS
+
+        //Flash stuff
+        onLoaderClose('en', '/Home/_bottom','http://hsdevtemp.blob.core.windows.net/hsdevnext-web/', 'bg-curtains-world.jpg');
+        preLoadRegistrationFlow("http://hsdevtemp.blob.core.windows.net/hsdevnext-flash/swf/happy_studio_registration_framework_lite.swf","1125", flashvars, params, attributes);
+        preLoadNewPlayerFlow("http://hsdevtemp.blob.core.windows.net/hsdevnext-flash/swf/happy_studio_login_framework_lite.swf","1125", flashvars, params, attributes);
+
+        //VideoJS stuff
+        videojs.options.flash.swf = "http://hsdevtemp.blob.core.windows.net/hsdevnext-web/js/videoJs-4.0.4/video-js.swf";
+                
+        // moved back here, reason - video, audio and buttons should be independent. (HSTUDIO-25425 fixed with flag initMedia)
+        //moved to init complete of setupSound
+        if (noMedia != "true") {
+            // it shouldn't break nothing if goes wrong
+            try {
+                frontGateVid('fgVid'); //Front Gates Video Init
+                videoTourVid('vidVT'); //Video Tour Setup
+            } catch(e) {
+            }
+        }
+        
+        //start the ambience
+        setupSound(staticContent);
+
+        //Browser resize for modal
+        $(window).resize(function () {
+            //only do it if the dialog box is not hidden
+            if (!$('#dialog-countrySelect').is(':hidden'))  {
+                modal($('#dialog-countrySelect'));      
+            }
+            if (!$('#dialogVideoTour').is(':hidden'))  {
+                modal($('#dialogVideoTour'));      
+            }
+        });
+        
+       $("#newPlayer").click(function () {
+           initMedia = false; 
+           newPlayer(); 
+       });
+        
+       $("#returningPlayer").click(function () {
+           initMedia = false; 
+           returningPlayer(); 
+       });
+
+        //center the bot nav and btns due to LOC text
+       center($("#videoTour"),$('#overlayContainer'))
+       center($("#bottomBtns"), $('#bottomnav'))
+
+        //quick toggle for backBtn() - testing purposes only
+        //$('#cookieBgMid p').click(function (){backBtn(true)})
+
+        //modal/dialog handlers
+        $('.modalClose, #dialog-overlay').click(function(){modalClose();});
+        $('.selectCountryLanguage').click(function(){countrySelect();});
+        //Flash swift loading handlers
+        $('#main').addClass('ani');
+        
+        setupCountryLinkTracking();
+        
+        //show modal if required
+
+        //use the base64 fonts for firefox only
+        if (navigator.userAgent.toLowerCase().match(/mozilla/g) || navigator.userAgent.toLowerCase().match(/msie/g)) {
+            $('body').append('<link rel="stylesheet" type="text/css" href="'+staticContent+'css/ff_font.css">');
+        }
+
+        TimeMachineInit();
+        tracking();
+
+        //fill the TRUSTe boxes
+        console.log("filling TRUSTe boxes");
+        /*
+        $.get('/Home/_TRUSTeBox', function(data) {
+            $(".fillTRUSTeBox").html(data);
+        });
+        */
+        $.ajax({
+            url: '/home/_TRUSTeBox', type: 'GET',
+            dataType: 'text', cache: false,
+            complete: function (response) {
+                console.log("filling TRUSTe boxes - status:" + response.status);
+                var r = response.responseText;
+                var r1 = r.replace(new RegExp("&amp;", "gm"), "&");
+                var r2 = r1.replace(new RegExp("&_=[0-9]*", "gm"), "");
+                console.log("filling TRUSTe boxes - with:\n" +r2);
+                $(".fillTRUSTeBox").html(r2);
+            }
+        });
+    });
+    
+</script>
+
+
+</body>
+</html>
+
+
+
+

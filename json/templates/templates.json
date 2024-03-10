@@ -1,0 +1,521 @@
+{
+"templates":
+	[
+		{
+			"TemplateName":"localPet",
+			"Name": "localPet",
+			"Type": "BasicEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/pets/beagle.sea","visible":true,"alwaysLoaded":false,"lightGroup":"petLight","castsShadows":true,"cloneMaterials":true},
+			"Behaviours": [
+				{
+					"Name": "Pet_PlayerPetBehaviour",
+					"BehaviourDefinitionName": "PlayerPetBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "Pet_ClothingBehaviour",
+					"BehaviourDefinitionName": "ClothingBehaviour",
+					"PropertyData": {"heartbeat":false,"enabled":true}
+				},
+				{
+					"Name": "Pet_FollowBehaviour",
+					"BehaviourDefinitionName": "WonderBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"radius":10.0,"target":"localAvatar","turnToUser":true,"allowedAngle":45,"walkSpeed":7,"targetnavgroup":"WalkableMesh","beginWalkAnimName":"run","endWalkAnimName":"walk"}
+				},
+				{
+					"Name":"PetNetworkBehaviour",
+					"BehaviourDefinitionName":"PetNetworkBehaviour",
+					"PropertyData":{"targetBehaviour":"Pet_PlayerPetBehaviour","enabled":true,"heartbeat":false}
+				}
+			]
+		},
+		{
+			"TemplateName":"adoptionCenterPet",
+			"Name": "localPet",
+			"Type": "BasicEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/pets/seagull.sea","visible":true,"alwaysLoaded":false,"lightGroup":"petLight","castsShadows":true,"cloneMaterials":true},
+			"Behaviours": [
+				{
+					"Name": "Pet_PlayerPetBehaviour",
+					"BehaviourDefinitionName": "PlayerPetBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "Pet_ClothingBehaviour",
+					"BehaviourDefinitionName": "ClothingBehaviour",
+					"PropertyData": {"heartbeat":false,"enabled":true}
+				},
+				{
+					"Name": "Pet_FollowBehaviour",
+					"BehaviourDefinitionName": "WonderBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"radius":5.0,"walkSpeed":10,"turnToUser":true,"allowedAngle":45,"targetnavgroup":"WalkableMesh","beginWalkAnimName":"run","endWalkAnimName":"walk"}
+				},
+				{
+					"Name":"PetNetworkBehaviour",
+					"BehaviourDefinitionName":"PetNetworkBehaviour",
+					"PropertyData":{"targetBehaviour":"Pet_PlayerPetBehaviour","enabled":true,"heartbeat":false}
+				}
+			]
+		},
+		{
+			"TemplateName":"sleepingPet",
+			"Name": "localPet",
+			"Type": "BasicEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/pets/beagle.sea","visible":true,"alwaysLoaded":false,"lightGroup":"petLight","castsShadows":true,"cloneMaterials":true},
+			"Behaviours": [
+				{
+					"Name": "Pet_PlayerPetBehaviour",
+					"BehaviourDefinitionName": "PlayerPetBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "Pet_FollowBehaviour",
+					"BehaviourDefinitionName": "WonderBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"radius":5.0,"walkSpeed":10,"turnToUser":true,"allowedAngle":45,"targetnavgroup":"WalkableMesh","beginWalkAnimName":"run","endWalkAnimName":"walk"}
+				},
+				{
+					"Name": "Pet_StarParticlesBehaviour",
+					"BehaviourDefinitionName": "BasicParticleBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"particletype":"PetAdoptionStars"}
+				},
+				{
+					"Name": "Pet_RayParticlesBehaviour",
+					"BehaviourDefinitionName": "BasicParticleBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"particletype":"PetAdoptionRays"}
+				},
+				{
+					"Name": "Pet_RandomAnimations",
+					"BehaviourDefinitionName": "RandomAnimationBehaviour",
+					"PropertyData": {"heartbeat":false,"enabled":true,"minDelay":4000, "maxDelay":8000, "playIdleOnComplete":true, "animNames":"unique1,previewHappy,purchaseHappy,tickle,jumpTrick,huntTrick,speakTrick"}
+				},
+				{
+					"Name": "Pet_RayParticlesBehaviour",
+					"BehaviourDefinitionName": "BasicParticleBehaviour",
+					"PropertyData": {"heartbeat":false,"enabled":false,"particletype":"PetAdoptionRays"}
+				},
+				{
+					"Name": "Pet_StarParticlesBehaviour",
+					"BehaviourDefinitionName": "BasicParticleBehaviour",
+					"PropertyData": {"heartbeat":false,"enabled":false,"particletype":"PetAdoptionStars"}
+				}				
+			]
+		},
+		{
+			"TemplateName":"dummyPet",
+			"Name": "localPet",
+			"Type": "BasicEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/pets/beagle.sea","visible":true,"alwaysLoaded":false,"lightGroup":"petLight","castsShadows":true,"cloneMaterials":true},
+			"Behaviours": [
+				{
+					"Name": "Pet_PlayerPetBehaviour",
+					"BehaviourDefinitionName": "PlayerPetBehaviour",
+					"PropertyData": {"heartbeat":false,"enabled":false}
+				},
+				{
+					"Name": "Pet_ClothingBehaviour",
+					"BehaviourDefinitionName": "ClothingBehaviour",
+					"PropertyData": {"heartbeat":false,"enabled":true}
+				}
+			]
+		},
+		{
+			"TemplateName":"petMaster",
+			"Name": "petMaster",
+			"Type": "BasicEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/pets/pet_master.sea","visible":true,"alwaysLoaded":false,"lightGroup":"petLight","castsShadows":true},
+			"Behaviours": [
+				{
+					"Name": "Pet_PetMasterBehaviour",
+					"BehaviourDefinitionName": "PetMasterBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "Pet_FollowBehaviour",
+					"BehaviourDefinitionName": "WonderBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"radius":10.0,"walkSpeed":5,"targetnavgroup":"WalkableMesh","beginWalkAnimName":"walk","endWalkAnimName":"happyIdle"}
+				},
+				{
+					"Name": "Pet_Exclamation",
+					"BehaviourDefinitionName": "MissionMarkerBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"alwaysShow":true, "positionOffset":"0.0,4.5,0.0"}
+				}
+			]
+		},
+		{
+			"TemplateName":"petMasterAdoptionCenter",
+			"Name": "petMaster",
+			"Type": "BasicEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/pets/pet_master.sea","visible":true,"alwaysLoaded":false,"lightGroup":"petLight","castsShadows":true},
+			"Behaviours": [
+				{
+					"Name": "Pet_PetMasterBehaviour",
+					"BehaviourDefinitionName": "PetMasterBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				}
+			]
+		},
+		{
+			"TemplateName":"careHeart",
+			"Name": "careHeart",
+			"Type": "SpriteEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"image/pets/petCare_pickup.png","visible":true,"alwaysLoaded":false,"castsShadows":false},
+			"Behaviours": [
+				{
+					"Name": "CareHeart",
+					"BehaviourDefinitionName": "CareHeartBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "CareHeartSpriteSheet",
+					"BehaviourDefinitionName": "JsonSpriteSheetBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"animJson":"image/pets/petCare_pickup.json"}
+				}
+			]
+		},
+		{
+			"TemplateName":"MultiplayerZoneLocalAvatar",
+			"Name":"localAvatar",
+			"Type":"LocalPlayerEntity",
+			"PropertyData":{"alwaysLoaded":false,"asset":"3d/avatar/Avatar_body.sea","enabled":true,"heartbeat":true,"castsShadows":true,"isLit":true,"lightGroup":"","cloneMaterials":"true"},
+			"Behaviours": [
+				{
+					"Name":"PlayerAvatarBehaviour",
+					"BehaviourDefinitionName":"PlayerAvatarBehaviour",
+					"PropertyData":{"heartbeat":true,"enabled":true,"idleAnimName":"idle"}
+				},
+				{
+					"Name":"PlayerAvatarNavigation",
+					"BehaviourDefinitionName":"PlayerNavigationBehaviour",
+					"PropertyData":{"targetnavgroup":"WalkableMesh","name":"AvatarNav","walkSpeed":6.4,"heartbeat":true,"beginWalkAnimName":"walk","endWalkAnimName":"idle","enabled":true}
+				},
+				{
+					"Name":"PlayerAvatarNavigationNetwork",
+					"BehaviourDefinitionName":"NavigationNetworkBehaviour",
+					"PropertyData":{"targetBehaviour":"PlayerAvatarNavigation","enabled":true,"heartbeat":false}
+				},
+				{
+					"Name":"PlayerAvatarFaceAnimation",
+					"BehaviourDefinitionName":"PlayerSpriteSheetBehaviour",
+					"PropertyData":{"heartbeat":true,"defaultAnimationName":"blink","subMeshName":"face_mat","frameWidth":128,"frameHeight":128,"enabled":true,"animation":"[{\"name\":\"blink\",\"frames\":[0,1,2,3,2,1,0],\"time\":1000},{\"name\":\"scared\",\"frames\":[0,6,6,0],\"time\":1000},{\"name\":\"angry\",\"frames\":[0,7,7,0],\"time\":1000},{\"name\":\"cry\",\"frames\":[0,5,5,0],\"time\":1200},{\"name\":\"cheer\",\"frames\":[0,4,4,0],\"time\":1000},{\"name\":\"excited\",\"frames\":[0,4,4,0],\"time\":1000},{\"name\":\"laugh\",\"frames\":[0,4,4,0],\"time\":1300}]"}
+				},
+				{
+					"Name":"PlayerOutfitBehaviour",
+					"BehaviourDefinitionName":"PlayerOutfitBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":true,"assetPath":"3d/avatar/items/","flipEnabled":true}
+				},
+				{
+					"Name":"PlayerAvatarChat",
+					"BehaviourDefinitionName":"ChatBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":false}
+				},
+				{
+					"Name":"PlayerAvatarChatNetwork",
+					"BehaviourDefinitionName":"ChatNetworkBehaviour",
+					"PropertyData":{"targetBehaviour":"PlayerAvatarChat","enabled":true,"heartbeat":false}
+				},
+				{
+					"Name":"PlayerProfileMarker",
+					"BehaviourDefinitionName":"PlayerProfileMarkerBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":false,"enableClick":true,"cursorSwapOnOver":true,"boundsOnly":true,"cursorState":"clickhand","targetBehaviour":""}
+				}
+			]
+		},
+		{
+			"TemplateName":"SingleZoneLocalAvatar",
+			"Name":"localAvatar",
+			"Type":"LocalPlayerEntity",
+			"PropertyData":{"alwaysLoaded":false,"asset":"3d/avatar/Avatar_body.sea","enabled":true,"heartbeat":true,"castsShadows":true,"isLit":true,"lightGroup":"","cloneMaterials":"false"},
+			"Behaviours": [
+				{
+					"Name":"PlayerAvatarBehaviour",
+					"BehaviourDefinitionName":"PlayerAvatarBehaviour",
+					"PropertyData":{"heartbeat":true,"enabled":true,"idleAnimName":"idle"}
+				},
+				{
+					"Name":"PlayerAvatarNavigation",
+					"BehaviourDefinitionName":"PlayerNavigationBehaviour",
+					"PropertyData":{"targetnavgroup":"WalkableMesh","name":"AvatarNav","walkSpeed":6.4,"heartbeat":true,"beginWalkAnimName":"walk","endWalkAnimName":"idle","enabled":true}
+				},
+				{
+					"Name":"PlayerAvatarFaceAnimation",
+					"BehaviourDefinitionName":"PlayerSpriteSheetBehaviour",
+					"PropertyData":{"heartbeat":true,"defaultAnimationName":"blink","subMeshName":"face_mat","frameWidth":128,"frameHeight":128,"enabled":true,"animation":"[{\"name\":\"blink\",\"frames\":[0,1,2,3,2,1,0],\"time\":1000},{\"name\":\"scared\",\"frames\":[0,6,6,0],\"time\":1000},{\"name\":\"angry\",\"frames\":[0,7,7,0],\"time\":1000},{\"name\":\"cry\",\"frames\":[0,5,5,0],\"time\":1200},{\"name\":\"cheer\",\"frames\":[0,4,4,0],\"time\":1000},{\"name\":\"excited\",\"frames\":[0,4,4,0],\"time\":1000},{\"name\":\"laugh\",\"frames\":[0,4,4,0],\"time\":1300}]"}
+				},
+				{
+					"Name":"PlayerOutfitBehaviour",
+					"BehaviourDefinitionName":"PlayerOutfitBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":true,"assetPath":"3d/avatar/items/","flipEnabled":true}
+				},
+				{
+					"Name":"PlayerProfileMarker",
+					"BehaviourDefinitionName":"PlayerProfileMarkerBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":false,"enableClick":true,"cursorSwapOnOver":true,"boundsOnly":true,"cursorState":"clickhand","targetBehaviour":""}
+				}
+			]
+		},
+		{
+			"TemplateName":"MultiplayerZoneRemoteAvatar",
+			"Name":"remoteAvatar",
+			"Type":"RemotePlayerEntity",
+			"PropertyData":{"alwaysLoaded":false,"asset":"3d/avatar/Avatar_body.sea","enabled":true,"heartbeat":true,"castsShadows":true,"isLit":true,"lightGroup":"","cloneMaterials":"true"},
+			"Behaviours": [
+				{
+					"Name":"PlayerAvatarBehaviour",
+					"BehaviourDefinitionName":"PlayerAvatarBehaviour",
+					"PropertyData":{"heartbeat":true,"enabled":true,"idleAnimName":"idle"}
+				},
+				{
+					"Name":"PlayerAvatarNavigation",
+					"BehaviourDefinitionName":"PlayerNavigationBehaviour",
+					"PropertyData":{"targetnavgroup":"WalkableMesh","name":"AvatarNav","walkSpeed":6.4,"heartbeat":true,"beginWalkAnimName":"walk","endWalkAnimName":"idle","enabled":true}
+				},
+				{
+					"Name":"PlayerAvatarNavigationNetwork",
+					"BehaviourDefinitionName":"NavigationNetworkBehaviour",
+					"PropertyData":{"targetBehaviour":"PlayerAvatarNavigation","enabled":true,"heartbeat":false,"sendingEnabled":false}
+				},
+				{
+					"Name":"PlayerAvatarFaceAnimation",
+					"BehaviourDefinitionName":"PlayerSpriteSheetBehaviour",
+					"PropertyData":{"heartbeat":true,"defaultAnimationName":"blink","subMeshName":"face_mat","frameWidth":128,"frameHeight":128,"enabled":true,"animation":"[{\"name\":\"blink\",\"frames\":[0,1,2,3,2,1,0],\"time\":1000},{\"name\":\"scared\",\"frames\":[0,6,6,0],\"time\":1000},{\"name\":\"angry\",\"frames\":[0,7,7,0],\"time\":1000},{\"name\":\"cry\",\"frames\":[0,5,5,0],\"time\":1200},{\"name\":\"cheer\",\"frames\":[0,4,4,0],\"time\":1000},{\"name\":\"excited\",\"frames\":[0,4,4,0],\"time\":1000},{\"name\":\"laugh\",\"frames\":[0,4,4,0],\"time\":1300}]"}
+				},
+				{
+					"Name":"PlayerOutfitBehaviour",
+					"BehaviourDefinitionName":"PlayerOutfitBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":true,"assetPath":"3d\/avatar\/items\/","flipEnabled":true}
+				},
+				{
+					"Name":"PlayerAvatarChat",
+					"BehaviourDefinitionName":"ChatBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":false}
+				},
+				{
+					"Name":"PlayerAvatarChatNetwork",
+					"BehaviourDefinitionName":"ChatNetworkBehaviour",
+					"PropertyData":{"targetBehaviour":"PlayerAvatarChat","enabled":true,"heartbeat":false,"sendingEnabled":false}
+				},
+				{
+					"Name":"PlayerProfileMarker",
+					"BehaviourDefinitionName":"PlayerProfileMarkerBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":false,"enableClick":true,"cursorSwapOnOver":true,"boundsOnly":true,"cursorState":"clickhand","targetBehaviour":""}
+				}
+			]
+		},
+		{
+			"TemplateName":"DummyAvatar",
+			"Name":"dummyAvatar",
+			"Type":"DummyPlayerEntity",
+			"PropertyData":{"alwaysLoaded":false,"asset":"3d/avatar/Avatar_body.sea","enabled":true,"heartbeat":true,"castsShadows":true,"isLit":true,"lightGroup":"","cloneMaterials":"true"},
+			"Behaviours": [
+				{
+					"Name":"PlayerAvatarBehaviour",
+					"BehaviourDefinitionName":"PlayerAvatarBehaviour",
+					"PropertyData":{"heartbeat":true,"enabled":true,"idleAnimName":"idle"}
+				},
+				{
+					"Name":"PlayerAvatarNavigation",
+					"BehaviourDefinitionName":"PlayerNavigationBehaviour",
+					"PropertyData":{"targetnavgroup":"WalkableMesh","name":"AvatarNav","walkSpeed":6.4,"heartbeat":true,"beginWalkAnimName":"walk","endWalkAnimName":"idle","enabled":true}
+				},
+				{
+					"Name":"PlayerAvatarFaceAnimation",
+					"BehaviourDefinitionName":"PlayerSpriteSheetBehaviour",
+					"PropertyData":{"heartbeat":true,"defaultAnimationName":"blink","subMeshName":"face_mat","frameWidth":128,"frameHeight":128,"enabled":true,"animation":"[{\"name\":\"blink\",\"frames\":[0,1,2,3,2,1,0],\"time\":1000}]"}
+				},
+				{
+					"Name":"PlayerOutfitBehaviour",
+					"BehaviourDefinitionName":"PlayerOutfitBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":true,"assetPath":"3d/avatar/items/","flipEnabled":true}
+				},
+				{
+					"Name":"PlayerSelectionBehaviour",
+					"BehaviourDefinitionName":"MouseInteractionBehaviour",
+					"PropertyData":{"enabled":true,"enableClick":true,"cursorSwapOnOver":true,"boundsOnly":true,"cursorState":"clickhand"}
+				},
+				{
+					"Name":"PlayerIdleAnimation",
+					"BehaviourDefinitionName":"AnimationBehaviour",
+					"PropertyData":{"enabled":true,"heartbeat":false,"animName":"idle","startImmediate":true}
+				}
+			]
+		},
+		{
+			"TemplateName":"VipGateItemSpriteSheetTemplate",
+			"Name": "vipGateItemSpriteSheetTemplate",
+			"Type": "SpriteEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"<PASSED FROM SERVER>","visible":true,"alwaysLoaded":false,"castsShadows":false,"alphaBlending":true,"alphaThreshold":0.1},
+			"Behaviours": [
+				{
+					"Name": "JsonSpriteSheetBehaviour",
+					"BehaviourDefinitionName": "JsonSpriteSheetBehaviour",
+					"PropertyData": {"animJson":"<PASSED FROM SERVER>", "heartbeat":true,"enabled":true,"subMeshName":"","totalAnimTime":-1,"loopAnimation":true}
+				},
+				{
+					"Name": "VipGateItemDragBehaviour",
+					"BehaviourDefinitionName": "VipGateItemDragBehaviour",
+					"PropertyData": {"placingObjectName":"<PASSED FROM SERVER>", "heartbeat":true,"enabled":true,"enableClick":true,"cursorSwapOnOver":true,"boundsOnly":true,"cursorState":"grabhand","targetBehaviour":""}
+				},
+				{
+					"Name": "VipGateItemAnchorBehaviour",
+					"BehaviourDefinitionName": "VipGateItemAnchorBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "VipGateItemBoidBehaviour",
+					"BehaviourDefinitionName": "VipGateItemBoidBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "VipGateItemAttachBehaviour",
+					"BehaviourDefinitionName": "VipGateItemAttachBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				}
+			]
+		},
+		{
+			"TemplateName":"VipGateItemSpriteVideoTemplate",
+			"Name": "vipGateItemSpriteVideoTemplate",
+			"Type": "SpriteEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"<PASSED FROM SERVER>","visible":true,"alwaysLoaded":false,"castsShadows":false,"alphaBlending":true,"alphaThreshold":0.1},
+			"Behaviours": [
+				{
+					"Name": "VideoBehaviour",
+					"BehaviourDefinitionName": "VideoBehaviour",
+					"PropertyData": {"videoUrl":"<PASSED FROM SERVER>","width":"<PASSED FROM SERVER>", "height":"<PASSED FROM SERVER>", "heartbeat":false,"enabled":true,"defaultVolume":1,"loop":true,"autoPlay":true,"alphaBlend":true}
+				},
+				{
+					"Name": "VipGateItemDragBehaviour",
+					"BehaviourDefinitionName": "VipGateItemDragBehaviour",
+					"PropertyData": {"placingObjectName":"<PASSED FROM SERVER>", "heartbeat":true,"enabled":true,"enableClick":true,"cursorSwapOnOver":true,"boundsOnly":true,"cursorState":"grabhand","targetBehaviour":""}
+				},
+				{
+					"Name": "VipGateItemAnchorBehaviour",
+					"BehaviourDefinitionName": "VipGateItemAnchorBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "VipGateItemBoidBehaviour",
+					"BehaviourDefinitionName": "VipGateItemBoidBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "VipGateItemAttachBehaviour",
+					"BehaviourDefinitionName": "VipGateItemAttachBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				}
+			]
+		},
+		{
+			"TemplateName":"VipGateItemSpriteTemplate",
+			"Name": "vipGateItemSpriteTemplate",
+			"Type": "SpriteEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"<PASSED FROM SERVER>","visible":true,"alwaysLoaded":false,"castsShadows":false,"alphaBlending":true,"alphaThreshold":0.1},
+			"Behaviours": [
+				{
+					"Name": "VipGateItemDragBehaviour",
+					"BehaviourDefinitionName": "VipGateItemDragBehaviour",
+					"PropertyData": {"placingObjectName":"<PASSED FROM SERVER>", "heartbeat":true,"enabled":true,"enableClick":true,"cursorSwapOnOver":true,"boundsOnly":true,"cursorState":"grabhand","targetBehaviour":""}
+				},
+				{
+					"Name": "VipGateItemAnchorBehaviour",
+					"BehaviourDefinitionName": "VipGateItemAnchorBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "VipGateItemBoidBehaviour",
+					"BehaviourDefinitionName": "VipGateItemBoidBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				},
+				{
+					"Name": "VipGateItemAttachBehaviour",
+					"BehaviourDefinitionName": "VipGateItemAttachBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true}
+				}
+			]
+		},
+		{
+			"TemplateName":"Sprite",
+			"Name": "sprite",
+			"Type": "SpriteEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/pets/beagle.sea","visible":true,"alwaysLoaded":false,"castsShadows":false,"alphaBlending":true,"alphaThreshold":0.1},
+			"Behaviours": []
+		},
+		{
+			"TemplateName":"AdoptionIndicator",
+			"Name": "adoptionIndicator",
+			"Type": "SpriteEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"image/pets/adoptionIdicator_mc.png","visible":true,"alwaysLoaded":false,"castsShadows":false,"alphaBlending":true,"alphaThreshold":0.1},
+			"Behaviours": [
+				{
+					"Name": "AdoptionIndicatorSpriteSheet",
+					"BehaviourDefinitionName": "JsonSpriteSheetBehaviour",
+					"PropertyData": {"heartbeat":true,"enabled":true,"animJson":"image/pets/adoptionIdicator_mc.json"}
+				}
+			]
+		},
+		{
+			"TemplateName":"LocalScoobyDooSurpriseBox",
+			"Name": "LocalScoobyDooSurpriseBox",
+			"Type": "BasicEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/licenses/license_scoobydoo/template_scoobydoo_surprisebox_copy.sea","visible":true,"alwaysLoaded":false,"lightGroup":"","shadowGroup":"","castsShadows":false},
+			"Behaviours": [
+				{
+					"Name": "ScoobyDooSurpriseBoxBehaviour",
+					"BehaviourDefinitionName": "ScoobyDooSurpriseBoxBehaviour",
+					"PropertyData": {"enabled": true, "heartbeat": false, "targetBehaviour":""}
+				}
+			]
+		},
+		{
+			"TemplateName":"RemoteScoobyDooSurpriseBox",
+			"Name": "RemoteScoobyDooSurpriseBox",
+			"Type": "BasicEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"3d/licenses/license_scoobydoo/template_scoobydoo_surprisebox_copy.sea","visible":true,"alwaysLoaded":false,"lightGroup":"","shadowGroup":"","castsShadows":false},
+			"Behaviours": [
+				{
+					"Name": "MouseInteractionBehaviour",
+					"BehaviourDefinitionName": "MouseInteractionBehaviour",
+					"PropertyData": {"targetBehaviour":"ScoobyDooSurpriseBoxPrankAnimationBehaviour", "enableDown":false,"doubleClickDelay":0,"heartbeat":true,"enableMove":false,"enableClick":true,"enableUp":false,"enableDoubleClick":false,"enableOver":false,"targetMeshName":"","cursorState":"clickhand","enableOut":false,"mouseEvent":"click","cursorSwapOnOver":true,"boundsOnly":true,"enabled":true}
+				},
+				{
+					"Name": "ScoobyDooSurpriseBoxPrankAnimationBehaviour",
+					"BehaviourDefinitionName": "ScoobyDooSurpriseBoxPrankAnimationBehaviour",
+					"PropertyData": {"enabled": true, "heartbeat": false}
+				},
+				{
+					"Name": "CustomEntityActivationNetworkBehaviour",
+					"BehaviourDefinitionName": "CustomEntityActivationNetworkBehaviour",
+					"PropertyData": {"targetBehaviour":"MouseInteractionBehaviour", "receiverBehaviour":"ScoobyDooSurpriseBoxBehaviour", "enabled": true, "heartbeat": false}
+				},
+				{
+					"Name": "ScoobyDooSurpriseBoxBehaviour",
+					"BehaviourDefinitionName": "ScoobyDooSurpriseBoxBehaviour",
+					"PropertyData": {"enabled": true, "heartbeat": false, "targetBehaviour":"BasicBehaviour"}
+				},
+				{
+					"Name": "BasicBehaviour",
+					"BehaviourDefinitionName": "BasicBehaviour",
+					"PropertyData": {"heartbeat":false,"enabled":true}
+				},
+				{
+					"Name": "TemplateSpawnerBehaviour",
+					"BehaviourDefinitionName": "TemplateSpawnerBehaviour",
+					"PropertyData": {"templateName":"ScoobyDooSurpriseBoxSpriteSheetAnimation", "spawnOnLoaded":true, "heartbeat":false,"enabled":true}
+				}
+			]
+		},
+		{
+			"TemplateName":"ScoobyDooSurpriseBoxSpriteSheetAnimation",
+			"Name": "ScoobyDooSurpriseBoxSpriteSheetAnimation",
+			"Type": "SpriteEntity",
+			"PropertyData": {"isLit":true,"enabled":true,"heartbeat":true,"asset":"licenses/license_scoobydoo/zones/spritesheets/spritesheet_scoobydoo_surpriseboxanimation.png","visible":true,"alwaysLoaded":false,"castsShadows":false},
+			"Behaviours": [
+				{
+					"Name": "AdvJsonSpriteSheetBehaviour",
+					"BehaviourDefinitionName": "AdvJsonSpriteSheetBehaviour",
+					"PropertyData": {"animJson":"licenses/license_scoobydoo/zones/spritesheets/spritesheet_scoobydoo_surpriseboxanimation.json", "heartbeat":true,"enabled":true,"subMeshName":"","totalAnimTime":-1,"loopAnimation":false,"onActivatePlayOut":true, "deleteOnOutComplete":true}
+				}
+			]
+		}
+	]
+}
